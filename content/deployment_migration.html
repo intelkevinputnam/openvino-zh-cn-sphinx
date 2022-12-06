@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>安装和部署 &#8212; OpenVINO  文档</title>
+    
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="../_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="../_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/tabs.css" type="text/css" />
+    <script src="../_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="../_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="../_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/target-highlight.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="OpenVINO™ 深度学习工作台概述" href="dl_workbench_overview.html" />
+    <link rel="prev" title="使用 OpenVINO™ 部署应用" href="deployment_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">OpenVINO</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  OpenVINO
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CPU.html">
+   CPU 设备
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Convert_Model_From_Paddle.html">
+   转换 PadlePaddle 模型
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Deep_Learning_Model_Optimizer_DevGuide.html">
+   模型优化器用法
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Device_Plugins.html">
+   推理设备支持
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="GPU.html">
+   GPU 设备
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Getting_performance_numbers.html">
+   获得性能数据
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Intro.html">
+   OpenVINO™ API 2.0 迁移指南
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OTE_landing_page.html">
+   OpenVINO™ 训练扩展
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   模型下载程序和其他自动化工具
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common_inference_pipeline.html">
+   推理管道
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configure_devices.html">
+   配置设备
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deployment_guide_introduction.html">
+   OpenVINO™ 部署简介
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="deployment_intro.html">
+   使用 OpenVINO™ 部署应用
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   安装和部署
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="dl_workbench_overview.html">
+   OpenVINO™ 深度学习工作台概述
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="dldt_deployment_optimization_guide.html">
+   运行时推理优化
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dldt_optimization_guide.html">
+   性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dlstreamer.html">
+   英特尔® Deep Learning Streamer（英特尔® DL Streamer）
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="gapi_intro.html">
+   OpenCV Graph API (G-API) 简介
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="graph_construction.html">
+   在 OpenVINO™ 运行时创建模型
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="home.html">
+   OpenVINO™ 模型服务器
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   OpenVINO™ 安全性简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model_introduction.html">
+   模型处理简介
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="model_optimization_guide.html">
+   模型优化指南
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_ecosystem.html">
+   OpenVINO™ 生态系统概述
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_ecosystem_ovtf.html">
+   OpenVINO™ 与 TensorFlow 集成
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_intro.html">
+   利用 OpenVINO™ 运行时展开推理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ov_dynamic_shapes.html">
+   动态形状
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ov_transformations.html">
+   转换 API 概述
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ovsa_get_started.html">
+   OpenVINO™ 安全附加组件
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="performance_benchmarks.html">
+   性能基准测试
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="performance_hints.html">
+   高级别性能提示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="preprocessing.html">
+   预处理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="protecting_model_guide.html">
+   结合使用加密模型和 OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="supported_model_formats.html">
+   支持的模型格式
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workbench.html">
+   深度学习工作台安全性
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openvino">
+   安装包仅包含 OpenVINO™ 运行时
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pypi-openvino">
+   通过 PyPI 安装 OpenVINO™ 开发工具
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     对于 2022.1 之前的版本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     对于 2022.1 及更高版本
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-c">
+   构建 C/C++ 应用的接口发生更改
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cmake">
+     CMake 接口
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     原生接口
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   库结构更清晰，部署更便捷
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+                <div>
+                  
+  <section id="id1">
+<h1>安装和部署<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>OpenVINO™ API 2.0 的主要理念之一是“易于使用”，这包括：</p>
+<ul class="simple">
+<li><p>从不同框架迁移到 OpenVINO™ 的简化。</p></li>
+<li><p>OpenVINO™ 的组织方式。</p></li>
+<li><p>开发工具的使用。</p></li>
+<li><p>开发和部署支持 OpenVINO™ 的应用。</p></li>
+</ul>
+<p>为实现该目标，2022.1 版本的 OpenVINO™ 对安装和部署流程做出了重大更改。本指南将向您介绍这些更改。</p>
+<section id="openvino">
+<h2>安装包仅包含 OpenVINO™ 运行时<a class="headerlink" href="#openvino" title="永久链接至标题">¶</a></h2>
+<p>自 OpenVINO™ 2022.1 起，开发工具仅通过 <a class="reference external" href="https://pypi.org/project/openvino-dev/">PyPI</a> 分发，而不再包含在 OpenVINO™ 安装包中。如需这些组件的列表，请参阅<span class="xref myst">安装概述</span>指南。这种方法的优势包括：</p>
+<ul class="simple">
+<li><p>简化用户体验 - 在早期版本中，不同分发类型安装和使用 OpenVINO™ 开发工具的方式各不相同（OpenVINO™ 安装程序与 PyPI），</p></li>
+<li><p>因此确保依赖项通过 PIP 程序包管理器进行正确处理，并支持开发工具的虚拟环境。</p></li>
+</ul>
+<p>OpenVINO™ 2022.1 安装包的组织结构如下：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">runtime</span></code> 文件夹包含标头、库和 CMake 接口。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tools</span></code> 文件夹包含<span class="xref myst">编译工具</span>、<span class="xref myst">部署管理器</span>和一组 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> 文件。其中提供了对应版本的 <code class="docutils literal notranslate"><span class="pre">openvino-dev</span></code> 程序包的链接。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> 文件夹包含 Python 版本的 OpenVINO™ 运行时。</p></li>
+</ul>
+</section>
+<section id="pypi-openvino">
+<h2>通过 PyPI 安装 OpenVINO™ 开发工具<a class="headerlink" href="#pypi-openvino" title="永久链接至标题">¶</a></h2>
+<p>由于 OpenVINO™ 开发工具不再位于安装包中。因此安装过程也已发生变化。本节将通过与早期版本进行比较来介绍整个安装过程。</p>
+<section id="id2">
+<h3>对于 2022.1 之前的版本<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>在早期版本中，OpenVINO™ 开发工具是主程序包的一部分。安装程序包后，如欲转换模型（例如，TensorFlow），您需要通过使用 <code class="docutils literal notranslate"><span class="pre">requirements_tf.txt</span></code> 等要求文件安装其他依赖项，通过 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> 脚本安装训练后优化工具和精度检查器工具，然后使用 <code class="docutils literal notranslate"><span class="pre">setupvars</span></code> 脚本将工具提供给下列命令：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ mo.py -h
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>对于 2022.1 及更高版本<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>在 OpenVINO™ 2022.1 及更高版本中，您只能从 <a class="reference external" href="https://pypi.org/project/openvino-dev/">PyPI</a> 存储库使用以下命令（例如，TensorFlow）安装开发工具：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install -r &lt;INSTALL_DIR&gt;/tools/requirements_tf.txt
+</pre></div>
+</div>
+<p>这将通过 <code class="docutils literal notranslate"><span class="pre">openvino-dev</span></code> 程序包安装所有开发工具和支持 TensorFlow 所需的其他组件（请参阅<strong>步骤 4：安装程序包</strong> - 位于 <a class="reference external" href="https://pypi.org/project/openvino-dev/">PyPI 页面</a>，了解其他框架的参数）。</p>
+<p>然后，相关命令即可使用这些工具，例如：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ mo -h
+$ pot -h
+</pre></div>
+</div>
+<p>不需要安装任何其他依赖项。有关安装步骤的更多详细信息，请参阅<span class="xref myst">安装 OpenVINO™ 开发工具</span>。</p>
+</section>
+</section>
+<section id="c-c">
+<h2>构建 C/C++ 应用的接口发生更改<a class="headerlink" href="#c-c" title="永久链接至标题">¶</a></h2>
+<p>支持 API 2.0 的全新 OpenVINO™ 运行时还在构建 C/C++ 应用方面做出了一些更改。</p>
+<section id="cmake">
+<h3>CMake 接口<a class="headerlink" href="#cmake" title="永久链接至标题">¶</a></h3>
+<p>对 CMake 接口的更改如下：</p>
+<p><strong>使用早期版本的推理引擎</strong>：</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">InferenceEngine</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">ngraph</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">ie_ngraph_app</span> <span class="s">main.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">ie_ngraph_app</span> <span class="s">PRIVATE</span> <span class="o">${</span><span class="nv">InferenceEngine_LIBRARIES</span><span class="o">}</span> <span class="o">${</span><span class="nv">NGRAPH_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>使用 OpenVINO™ 运行时 2022.1 (API 2.0)</strong>：</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">OpenVINO</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">ov_app</span> <span class="s">main.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">ov_app</span> <span class="s">PRIVATE</span> <span class="s">openvino::runtime</span><span class="p">)</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">ov_c_app</span> <span class="s">main.c</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">ov_c_app</span> <span class="s">PRIVATE</span> <span class="s">openvino::runtime::c</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>原生接口<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>通过使用 MSVC IDE、UNIX 生成文件和如下所示已做出更改的任何其他接口，在不借助 CMake 接口的情况下，可以构建应用：</p>
+<p><strong>使用早期版本的推理引擎</strong>：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;INSTALL_DIR&gt;/deployment_tools/inference_engine/include
+&lt;INSTALL_DIR&gt;/deployment_tools/ngraph/include
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;INSTALL_DIR&gt;/deployment_tools/inference_engine/lib/intel64/Release
+&lt;INSTALL_DIR&gt;/deployment_tools/ngraph/lib/
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>// UNIX systems
+inference_engine.so ngraph.so
+
+// Windows
+inference_engine.dll ngraph.dll
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ngraph.lib
+inference_engine.lib
+</pre></div>
+</div>
+<p><strong>使用 OpenVINO™ 运行时 2022.1 (API 2.0)</strong>：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;INSTALL_DIR&gt;/runtime/include
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;INSTALL_DIR&gt;/runtime/lib/intel64/Release
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>// UNIX systems
+openvino.so
+
+// Windows
+openvino.dll
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>openvino.lib
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>库结构更清晰，部署更便捷<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>OpenVINO™ 2022.1 对库进行了重组，以使部署更加方便。在早期版本中，需要使用几个库才能执行部署步骤。现在，根据您的开发语言，您只需使用 <code class="docutils literal notranslate"><span class="pre">openvino</span></code> 或 <code class="docutils literal notranslate"><span class="pre">openvino_c</span></code>，并借助必要的插件即可完成任务。例如，<code class="docutils literal notranslate"><span class="pre">openvino_intel_cpu_plugin</span></code> 和 <code class="docutils literal notranslate"><span class="pre">openvino_ir_frontend</span></code> 插件将帮助加载 OpenVINO™ IR 并在 CPU 设备上执行接口（有关更多详细信息，请参阅<span class="xref myst">通过 OpenVINO™ 进行本地分发</span>）。</p>
+<p>下面对 OpenVINO™ 2022.1 与早期版本之间的库结构进行了详细比较：</p>
+<ul class="simple">
+<li><p>从 2022.1 版本开始，将使用包含所有功能的单一核心库（<code class="docutils literal notranslate"><span class="pre">openvino</span></code> 用于 C++ 运行时、<code class="docutils literal notranslate"><span class="pre">openvino_c</span></code> 用于推理引擎 API C 接口），而不使用之前包含 <code class="docutils literal notranslate"><span class="pre">inference_engine</span></code>、<code class="docutils literal notranslate"><span class="pre">ngraph</span></code>、<code class="docutils literal notranslate"><span class="pre">inference_engine_transformations</span></code> 和 <code class="docutils literal notranslate"><span class="pre">inference_engine_lp_transformations</span></code> 的核心库。</p></li>
+<li><p>可选的 <code class="docutils literal notranslate"><span class="pre">inference_engine_preproc</span></code> 预处理库（如果使用 <code class="docutils literal notranslate"><span class="pre">InferenceEngine::PreProcessInfo::setColorFormat</span></code> 或 <code class="docutils literal notranslate"><span class="pre">InferenceEngine::PreProcessInfo::setResizeAlgorithm</span></code>）已重命名为 <code class="docutils literal notranslate"><span class="pre">openvino_gapi_preproc</span></code>，并已在 2022.1 中弃用。有关更多详细信息，请参阅 <a class="reference internal" href="preprocessing.html"><span class="doc std std-doc">OpenVINO™ API 2.0 的预处理功能</span></a>。</p></li>
+<li><p>插件库已重命名，如下所述：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">openvino_intel_cpu_plugin</span></code> 用于 <span class="xref myst">CPU</span> 设备，而不使用 <code class="docutils literal notranslate"><span class="pre">MKLDNNPlugin</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openvino_intel_gpu_plugin</span></code> 用于 <span class="xref myst">GPU</span> 设备，而不使用 <code class="docutils literal notranslate"><span class="pre">clDNNPlugin</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openvino_auto_plugin</span></code> 用于<span class="xref myst">自动设备插件</span>。</p></li>
+</ul>
+</li>
+<li><p>用于读取和转换模型的插件已更改如下：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">openvino_ir_frontend</span></code> 用于读取 IR，而不使用 <code class="docutils literal notranslate"><span class="pre">inference_engine_ir_reader</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openvino_onnx_frontend</span></code> 用于读取 ONNX 模型，而不使用 <code class="docutils literal notranslate"><span class="pre">inference_engine_onnx_reader</span></code>（包括其依赖项）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openvino_paddle_frontend</span></code> 已添加到 2022.1 中，用于读取 PaddlePaddle 模型。</p></li>
+</ul>
+</li>
+</ul>
+<!-----
+Older versions of OpenVINO had several core libraries and plugin modules:
+- Core: `inference_engine`, `ngraph`, `inference_engine_transformations`, `inference_engine_lp_transformations`
+- Optional `inference_engine_preproc` preprocessing library (if `InferenceEngine::PreProcessInfo::setColorFormat` or `InferenceEngine::PreProcessInfo::setResizeAlgorithm` are used)
+- Plugin libraries:
+ - `MKLDNNPlugin` for [CPU](../supported_plugins/CPU.md) device
+ - `clDNNPlugin` for [GPU](../supported_plugins/GPU.md) device
+ - `MultiDevicePlugin` for [Multi-device execution](../multi_device.md)
+ - others
+- Plugins to read and convert a model:
+ - `inference_engine_ir_reader` to read OpenVINO IR
+ - `inference_engine_onnx_reader` (with its dependencies) to read ONNX models
+Now, the modularity is more clear:
+- A single core library with all the functionality `openvino` for C++ runtime
+- `openvino_c` with Inference Engine API C interface
+- **Deprecated** Optional `openvino_gapi_preproc` preprocessing library (if `InferenceEngine::PreProcessInfo::setColorFormat` or `InferenceEngine::PreProcessInfo::setResizeAlgorithm` are used)
+ - Use [preprocessing capabilities from OpenVINO 2.0](../preprocessing_overview.md)
+- Plugin libraries with clear names:
+ - `openvino_intel_cpu_plugin`
+ - `openvino_intel_gpu_plugin`
+ - `openvino_auto_plugin`
+ - others
+- Plugins to read and convert models:
+ - `openvino_ir_frontend` to read OpenVINO IR
+ - `openvino_onnx_frontend` to read ONNX models
+ - `openvino_paddle_frontend` to read Paddle models
+---->
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="deployment_intro.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="dl_workbench_overview.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Various.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

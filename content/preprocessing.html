@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>预处理 &#8212; OpenVINO  文档</title>
+    
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="../_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="../_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/tabs.css" type="text/css" />
+    <script src="../_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="../_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="../_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/target-highlight.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="结合使用加密模型和 OpenVINO" href="protecting_model_guide.html" />
+    <link rel="prev" title="高级别性能提示" href="performance_hints.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">OpenVINO</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  OpenVINO
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CPU.html">
+   CPU 设备
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Convert_Model_From_Paddle.html">
+   转换 PadlePaddle 模型
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Deep_Learning_Model_Optimizer_DevGuide.html">
+   模型优化器用法
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Device_Plugins.html">
+   推理设备支持
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="GPU.html">
+   GPU 设备
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Getting_performance_numbers.html">
+   获得性能数据
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Intro.html">
+   OpenVINO™ API 2.0 迁移指南
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="OTE_landing_page.html">
+   OpenVINO™ 训练扩展
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   模型下载程序和其他自动化工具
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common_inference_pipeline.html">
+   推理管道
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configure_devices.html">
+   配置设备
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deployment_guide_introduction.html">
+   OpenVINO™ 部署简介
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="deployment_intro.html">
+   使用 OpenVINO™ 部署应用
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deployment_migration.html">
+   安装和部署
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="dl_workbench_overview.html">
+   OpenVINO™ 深度学习工作台概述
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="dldt_deployment_optimization_guide.html">
+   运行时推理优化
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dldt_optimization_guide.html">
+   性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dlstreamer.html">
+   英特尔® Deep Learning Streamer（英特尔® DL Streamer）
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="gapi_intro.html">
+   OpenCV Graph API (G-API) 简介
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="graph_construction.html">
+   在 OpenVINO™ 运行时创建模型
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="home.html">
+   OpenVINO™ 模型服务器
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   OpenVINO™ 安全性简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model_introduction.html">
+   模型处理简介
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="model_optimization_guide.html">
+   模型优化指南
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_ecosystem.html">
+   OpenVINO™ 生态系统概述
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_ecosystem_ovtf.html">
+   OpenVINO™ 与 TensorFlow 集成
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_intro.html">
+   利用 OpenVINO™ 运行时展开推理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ov_dynamic_shapes.html">
+   动态形状
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ov_transformations.html">
+   转换 API 概述
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ovsa_get_started.html">
+   OpenVINO™ 安全附加组件
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="performance_benchmarks.html">
+   性能基准测试
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="performance_hints.html">
+   高级别性能提示
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   预处理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="protecting_model_guide.html">
+   结合使用加密模型和 OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="supported_model_formats.html">
+   支持的模型格式
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workbench.html">
+   深度学习工作台安全性
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-2-0">
+   API 2.0 中预处理的工作机制
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   准备：在 Python 中导入预处理
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   使用平均值和标度值
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   转换精度和布局
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   使用图像缩放
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     转换颜色空间
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   其他资源
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+                <div>
+                  
+  <section id="id1">
+<h1>预处理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本指南通过与之前的推理引擎 API 中的预处理功能进行比较，介绍 API 2.0 中预处理的工作机制。此外，还通过代码示例演示了如何将预处理场景从推理引擎迁移到 API 2.0。</p>
+<section id="api-2-0">
+<h2>API 2.0 中预处理的工作机制<a class="headerlink" href="#api-2-0" title="永久链接至标题">¶</a></h2>
+<p>推理引擎 API 的 <code class="docutils literal notranslate"><span class="pre">InferenceEngine::CNNNetwork</span></code> 类中包含预处理功能。此类预处理信息不属于由 <span class="xref myst">OpenVINO™ 器件</span>执行的主要推理图的一部分。因此，在推理阶段之前，会单独存储和执行这些信息：</p>
+<ul class="simple">
+<li><p>对大多数 OpenVINO™ 推理插件来说，预处理操作在 CPU 上执行。因此，它们会使 CPU 忙于处理计算任务，而不会占用加速器。</p></li>
+<li><p>重新保存为 OpenVINO™ IR 文件格式后，<code class="docutils literal notranslate"><span class="pre">InferenceEngine::CNNNetwork</span></code> 中存储的预处理信息会丢失。</p></li>
+</ul>
+<p>API 2.0 引入了一种<span class="xref myst">新方法来向模型中添加预处理操作</span> - 每个预处理或后期处理操作将直接集成到模型中，并与推理图一起进行编译：</p>
+<ul class="simple">
+<li><p>API 2.0 首先通过使用 <code class="docutils literal notranslate"><span class="pre">ov::preprocess::PrePostProcessor</span></code> 添加预处理操作，</p></li>
+<li><p>然后通过使用 <code class="docutils literal notranslate"><span class="pre">ov::Core::compile_model</span></code> 在目标上编译模型。</p></li>
+</ul>
+<p>通过将预处理操作作为 OpenVINO™ 操作集的一部分，即可以 OpenVINO™ IR 文件格式读取并序列化经过预处理的模型。</p>
+<p>更重要的是，API 2.0 不会像推理引擎那样恢复任何默认布局。例如，<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">1,</span> <span class="pre">224,</span> <span class="pre">224,</span> <span class="pre">3</span> <span class="pre">}</span></code> 和 <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">224,</span> <span class="pre">224</span> <span class="pre">}</span></code> 形状均应位于 <code class="docutils literal notranslate"><span class="pre">NCHW</span></code> 布局中，但只有后者如此。因此，API 中的某些预处理功能需要显式设置布局。如需了解如何操作，请参阅<span class="xref myst">布局概述</span>。例如，要通过偏维 <code class="docutils literal notranslate"><span class="pre">H</span></code> 和 <code class="docutils literal notranslate"><span class="pre">W</span></code> 执行图像缩放，预处理需要了解维度 <code class="docutils literal notranslate"><span class="pre">H</span></code> 和 <code class="docutils literal notranslate"><span class="pre">W</span></code> 是什么。</p>
+<blockquote>
+<div><p><strong>注意</strong>：请使用模型优化器预处理功能在要优化的模型中插入预处理操作。因此，应用不需要重复读取模型并设置预处理。您可以使用<span class="xref myst">模型缓存功能</span>缩短推理时间。</p>
+</div></blockquote>
+<p>以下部分演示了如何将预处理场景从推理引擎 API 迁移到 API 2.0。
+代码片段假定您需要在推理引擎 API 中通过 <code class="docutils literal notranslate"><span class="pre">tensor_name</span></code> 对模型输入进行预处理，从而使用 <code class="docutils literal notranslate"><span class="pre">operation_name</span></code> 处理数据。</p>
+</section>
+<section id="python">
+<h2>准备：在 Python 中导入预处理<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
+<p>要利用预处理，必须添加以下导入项。</p>
+<p><strong>推理引擎 API</strong></p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.py imports</p>
+<p><strong>API 2.0</strong></p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.py ov_imports</p>
+<p>有两个不同的命名空间：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">runtime</span></code>。其中包含 API 2.0 类；</p></li>
+<li><p>和 <code class="docutils literal notranslate"><span class="pre">preprocess</span></code>，它提供预处理 API。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>使用平均值和标度值<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p><strong>推理引擎 API</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp mean_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py mean_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p><strong>API 2.0</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp ov_mean_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py ov_mean_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+</section>
+<section id="id3">
+<h2>转换精度和布局<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><strong>推理引擎 API</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp conversions</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py conversions</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p><strong>API 2.0</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp ov_conversions</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py ov_conversions</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+</section>
+<section id="id4">
+<h2>使用图像缩放<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p><strong>推理引擎 API</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp image_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py image_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p><strong>API 2.0</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp ov_image_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py ov_image_scale</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<section id="id5">
+<h3>转换颜色空间<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p><strong>推理引擎 API</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp color_space</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py color_space</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p><strong>API 2.0</strong></p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}</p>
+<p>&#64;snippet docs/snippets/ov_preprocessing_migration.cpp ov_color_space</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}</p>
+<p>&#64;snippet  docs/snippets/ov_preprocessing_migration.py ov_color_space</p>
+<p>&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+</section>
+</section>
+<section id="id6">
+<h2>其他资源<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><span class="xref myst">预处理细节</span></p></li>
+<li><p><span class="xref myst">NV12 分类样本</span></p></li>
+</ul>
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="performance_hints.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="protecting_model_guide.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Various.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -2,6 +2,5 @@ OpenVino zh_CN
 ################
 
 .. toctree::
-   :glob:
 
-   *
+   content/index
