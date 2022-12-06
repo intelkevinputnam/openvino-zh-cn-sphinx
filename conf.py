@@ -31,8 +31,7 @@ extensions = [
     'sphinx_panels',
     'doxyrest',
     'cpplexer',
-    'myst_parser',
-    'sphinx_tabs'
+    'myst_parser'
 ]
 
 html_theme = "openvino_sphinx_theme"
