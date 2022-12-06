@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。 &#8212; OpenVINO  文档</title>
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/tabs.css" type="text/css" />
+    <script src="_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/target-highlight.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="英特尔® Deep Learning Streamer（英特尔® DL Streamer）" href="dlstreamer.html" />
+    <link rel="prev" title="运行时推理优化" href="dldt_deployment_optimization_guide.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">OpenVINO</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="CPU.html">
+  CPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Convert_Model_From_Paddle.html">
+  转换 PadlePaddle 模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Deep_Learning_Model_Optimizer_DevGuide.html">
+  模型优化器用法
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Device_Plugins.html">
+  推理设备支持
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="GPU.html">
+  GPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Getting_performance_numbers.html">
+  获得性能数据
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Intro.html">
+  OpenVINO™ API 2.0 迁移指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="OTE_landing_page.html">
+  OpenVINO™ 训练扩展
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="README.html">
+  模型下载程序和其他自动化工具
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="common_inference_pipeline.html">
+  推理管道
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="configure_devices.html">
+  配置设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_guide_introduction.html">
+  OpenVINO™ 部署简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_intro.html">
+  使用 OpenVINO™ 部署应用
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_migration.html">
+  安装和部署
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dl_workbench_overview.html">
+  OpenVINO™ 深度学习工作台概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_deployment_optimization_guide.html">
+  运行时推理优化
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dlstreamer.html">
+  英特尔® Deep Learning Streamer（英特尔® DL Streamer）
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="gapi_intro.html">
+  OpenCV Graph API (G-API) 简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="graph_construction.html">
+  在 OpenVINO™ 运行时创建模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="home.html">
+  OpenVINO™ 模型服务器
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="introduction.html">
+  OpenVINO™ 安全性简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_introduction.html">
+  模型处理简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_optimization_guide.html">
+  模型优化指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem.html">
+  OpenVINO™ 生态系统概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem_ovtf.html">
+  OpenVINO™ 与 TensorFlow 集成
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_intro.html">
+  利用 OpenVINO™ 运行时展开推理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_dynamic_shapes.html">
+  动态形状
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_transformations.html">
+  转换 API 概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ovsa_get_started.html">
+  OpenVINO™ 安全附加组件
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_benchmarks.html">
+  性能基准测试
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_hints.html">
+  高级别性能提示
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="preprocessing.html">
+  预处理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="protecting_model_guide.html">
+  结合使用加密模型和 OpenVINO
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="supported_model_formats.html">
+  支持的模型格式
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="workbench.html">
+  深度学习工作台安全性
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   端到端应用性能
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   提高性能：模型与运行时优化对比
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   性能基准测试
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+                <div>
+                  
+  <section id="id1">
+<h1>性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p><img alt="" src="../img/LATENCY_VS_THROUGHPUT.svg" /></p>
+<p><strong>延迟</strong>测量处理单一输入所需的推理时间（毫秒）。如果同时执行多个输入（如通过批处理），那么整体吞吐量（在特定视觉处理任务中，则是每秒的推理次数或每秒帧数，即帧速率）通常更为重要。
+<strong>吞吐量</strong>通过用所处理的输入数量除以处理时间计算得出。</p>
+<section id="id2">
+<h2>端到端应用性能<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>区分神经网络的“纯”推理时间与端到端应用性能至关重要。例如，当在 dGPU 等加速器上处理主机输入张量时，主机和设备之间的数据传输可能会意外地影响性能。</p>
+<p>同样，输入预处理也会显著增加推理时间。如<span class="xref myst">获得性能数据</span>一节中所述，在评估<em>推理</em>性能时，一种方案是单独测量所有这些项目。
+但是，对于<strong>端到端场景</strong>，应考虑通过 OpenVINO™ 和异步执行进行图像预处理，作为一种分摊通信成本（如数据传输）的方式。有关更多详细信息，请参阅<span class="xref myst">一般优化指南</span>。</p>
+<p>另一个特定用例是<strong>首次推理延迟</strong>（例如，需要快速启动应用时），由此产生的性能可能主要受模型加载时间的影响。可以将<span class="xref myst">模型缓存</span>当作一种缩短模型加载/编译时间的方法。</p>
+<p>最后，<strong>内存占用空间</strong>限制可能是设计应用时的另一个考虑因素。虽然这为使用<em>模型</em>优化技术提供了动机，但请记住，面向吞吐量的执行通常会占用更多内存。有关更多详细信息，请参阅<span class="xref myst">运行时推理优化指南</span>。</p>
+<blockquote>
+<div><p><strong>注意</strong>：要获取 OpenVINO™ 的性能数据以及有关如何测量该数据并与原生框架进行比较的提示，请参阅<span class="xref myst">获得性能数据</span>一文。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>提高性能：模型与运行时优化对比<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p><strong>注意</strong>：首先确保您的模型可以通过 OpenVINO™ 运行时成功进行推理。</p>
+</div></blockquote>
+<p>有两种主要优化方法可提升 OpenVINO™ 的推理性能：模型级和运行时级优化。它们<strong>完全兼容</strong>并且可单独执行。</p>
+<ul class="simple">
+<li><p><strong>模型优化</strong>包括模型修改，如量化、修剪、预处理优化等。有关更多详细信息，请参阅本<a class="reference internal" href="model_optimization_guide.html"><span class="doc std std-doc">文档</span></a>。</p>
+<ul>
+<li><p>即使不调优运行时参数（如下所述），模型优化也会直接缩短推理时间。</p></li>
+</ul>
+</li>
+<li><p><strong>运行时（部署）优化</strong>包括调优模型<em>执行</em>参数。有关更多详细信息，请参阅<span class="xref myst">运行时推理优化指南</span>。</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>性能基准测试<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p><span class="xref myst">性能基准测试一节</span>中提供了一系列用于评估性能和比较数据（在各种支持的设备上测量得出）的公共模型。</p>
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="dldt_deployment_optimization_guide.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="dlstreamer.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Various.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

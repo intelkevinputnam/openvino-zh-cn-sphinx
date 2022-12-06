@@ -1,0 +1,1590 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>OpenVINO™ 安全附加组件 &#8212; OpenVINO  文档</title>
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/tabs.css" type="text/css" />
+    <script src="_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/target-highlight.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="性能基准测试" href="performance_benchmarks.html" />
+    <link rel="prev" title="转换 API 概述" href="ov_transformations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">OpenVINO</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="CPU.html">
+  CPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Convert_Model_From_Paddle.html">
+  转换 PadlePaddle 模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Deep_Learning_Model_Optimizer_DevGuide.html">
+  模型优化器用法
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Device_Plugins.html">
+  推理设备支持
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="GPU.html">
+  GPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Getting_performance_numbers.html">
+  获得性能数据
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Intro.html">
+  OpenVINO™ API 2.0 迁移指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="OTE_landing_page.html">
+  OpenVINO™ 训练扩展
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="README.html">
+  模型下载程序和其他自动化工具
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="common_inference_pipeline.html">
+  推理管道
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="configure_devices.html">
+  配置设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_guide_introduction.html">
+  OpenVINO™ 部署简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_intro.html">
+  使用 OpenVINO™ 部署应用
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_migration.html">
+  安装和部署
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dl_workbench_overview.html">
+  OpenVINO™ 深度学习工作台概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_deployment_optimization_guide.html">
+  运行时推理优化
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_optimization_guide.html">
+  性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dlstreamer.html">
+  英特尔® Deep Learning Streamer（英特尔® DL Streamer）
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="gapi_intro.html">
+  OpenCV Graph API (G-API) 简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="graph_construction.html">
+  在 OpenVINO™ 运行时创建模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="home.html">
+  OpenVINO™ 模型服务器
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="introduction.html">
+  OpenVINO™ 安全性简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_introduction.html">
+  模型处理简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_optimization_guide.html">
+  模型优化指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem.html">
+  OpenVINO™ 生态系统概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem_ovtf.html">
+  OpenVINO™ 与 TensorFlow 集成
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_intro.html">
+  利用 OpenVINO™ 运行时展开推理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_dynamic_shapes.html">
+  动态形状
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_transformations.html">
+  转换 API 概述
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  OpenVINO™ 安全附加组件
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_benchmarks.html">
+  性能基准测试
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_hints.html">
+  高级别性能提示
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="preprocessing.html">
+  预处理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="protecting_model_guide.html">
+  结合使用加密模型和 OpenVINO
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="supported_model_formats.html">
+  支持的模型格式
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="workbench.html">
+  深度学习工作台安全性
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   概述
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   关于安装
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-name-prerequisites-a">
+   必备条件
+   <a name="prerequisites">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-name-setup-host-a">
+   如何准备主机
+   <a name="setup-host">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-name-setup-packages-a">
+     步骤 1：在主机上设置程序包
+     <a name="setup-packages">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-name-setup-networking-a">
+     步骤 2：在主机上设置网络
+     <a name="setup-networking">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     步骤 3：克隆 OpenVINO™ 安全附加组件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vm-a-name-dev-isv-vm-a">
+     步骤 4：为模型开发人员和独立软件开发商的组合角色设置一个访客 VM
+     <a name="dev-isv-vm">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vm">
+     步骤 5：为用户角色设置访客 VM
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openvino-a-name-install-ovsa-a">
+   如何构建和安装 OpenVINO™ 安全附加组件软件
+   <a name="install-ovsa">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     步骤 1：构建 OpenVINO™ 模型服务器映像
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     步骤 2：构建全部角色所需的软件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     步骤 3：安装主机软件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openvino-isv">
+     步骤 4：安装 OpenVINO™ 安全附加组件模型开发人员/ISV 组件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     步骤 5：安装 OpenVINO™ 安全附加组件模型托管组件
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   如何使用 OpenVINO™ 安全附加组件
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     模型开发人员指令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       步骤 1：设置工件目录
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       步骤 2：创建密钥存储，并为其添加证书
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       步骤 3：创建模型
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       步骤 4：为模型定义访问控制，并为其创建原版使用许可
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tcb">
+       步骤 5：创建运行时参考 TCB
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       步骤 6：发布访问控制模型和运行时参考 TCB
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       步骤 7：接收用户请求
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     模型用户指令
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       步骤 1：设置工件目录
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ca">
+       步骤 2：将 CA 签名的证书添加到密钥存储
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       步骤 3：请求模型开发人员提供访问控制模型
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       步骤 4：接收访问控制模型并将其载入 OpenVINO™ 模型服务器中
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nginx">
+       步骤 5：启动 NGINX 模型服务器
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       步骤 6：准备运行推理
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       步骤 7：运行推理
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   摘要
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id23">
+   参考资料
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+                <div>
+                  
+  <section id="openvino">
+<h1>OpenVINO™ 安全附加组件<a class="headerlink" href="#openvino" title="永久链接至标题">¶</a></h1>
+<p>本指南为使用 OpenVINO™ 安全附加组件创建、分发和使用通过 OpenVINO™ 工具套件创建的模型的人员提供了说明：</p>
+<ul class="simple">
+<li><p><strong>模型开发人员</strong>：模型开发人员与独立软件开发商进行交互，以控制用户对模型的访问。本文档介绍如何设置硬件和虚拟机以使用 OpenVINO™ 安全附加组件定义对 OpenVINO™ 模型的访问控制，然后向用户提供访问控制模型。</p></li>
+<li><p><strong>独立软件开发商</strong>：使用本指南获取有关使用 OpenVINO™ 安全附加组件验证向您的客户（用户）提供的访问控制模型的许可的说明。</p></li>
+<li><p><strong>用户</strong>：本文档包含面向需要通过 OpenVINO™ 安全附加组件访问和运行访问控制模型的最终用户的说明。</p></li>
+</ul>
+<p>在此版本中，一个人既可以是模型开发人员，也可以是独立软件开发商。因此，本文档提供有关为这两个角色配置一个系统和为用户角色配置一个系统的说明。本文档还提供一种方法，让同一个人扮演模型开发人员、独立软件开发商和用户的角色，以便让您从用户的角度了解 OpenVINO™ 安全附加组件的工作原理。</p>
+<section id="id1">
+<h2>概述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>OpenVINO™ 安全附加组件可与英特尔® 架构上的 [OpenVINO™ 模型服务器](&#64;ref ovms_what_is_openvino_model_server)配合使用。OpenVINO™ 安全附加组件和 OpenVINO™ 模型服务器一起为模型开发人员和独立软件开发商提供了一种方法，可以使用安全封装和安全模型执行来实现对 OpenVINO™ 模型的访问控制，并让模型用户在指定的范围内运行推理。</p>
+<p>OpenVINO™ 安全附加组件包括三个组件，这些组件在基于内核的虚拟机 (KVM) 中运行。这些组件提供了一种在隔离环境中执行安全敏感操作的方法。这三个组件的简要说明如下所示。单击每条带三角形的线条以获取有关它的更多信息。</p>
+<div class="collapsible-section" data-title="<strong>OpenVINO™ Security Add-on Tool</strong>: As a Model Developer or Independent Software Vendor, you use the OpenVINO™ Security Add-on Tool(`ovsatool`) to generate a access controlled model and master license."><ul class="simple">
+<li><p>模型开发人员从 OpenVINO™ 工具套件输出生成访问控制模型。访问控制模型使用模型的中间表示 (IR) 文件创建分发给模型用户的访问控制输出文件存档。开发人员还可以将存档文件放在长期存储中或将其备份，而无需考虑额外的安全性。</p></li>
+<li><p>模型开发人员使用 OpenVINO™ 安全附加组件工具 (<code>ovsatool</code>) 为访问控制模型生成和管理加密密钥和相关附属内容。加密材料仅在虚拟机 (VM) 环境中可用。OpenVINO™ 安全附加组件密钥管理系统可以让模型开发人员获取外部证书颁发机构生成的证书，并将其添加到密钥存储中。</p></li>
+<li><p>模型开发人员以 JSON 格式文件为访问控制模型生成用户特定的许可。模型开发人员可以定义全局或用户特定的许可，并将许可策略附加到许可上。例如，模型开发人员可以为模型添加时间限制或限制用户可以运行模型的次数。</p></li>
+</ul>
+</div><div class="collapsible-section" data-title="<strong>OpenVINO™ Security Add-on License Service</strong>: Use the OpenVINO™ Security Add-on License Service to verify user parameters."><ul class="simple">
+<li><p>独立软件开发商托管 OpenVINO™ 安全附加组件许可服务，当用户尝试在模型服务器中加载访问控制模型时，该服务会响应许可验证请求。许可通过 OpenVINO™ 安全附加组件许可服务注册。</p></li>
+<li><p>当用户加载模型时，OpenVINO™ 安全附加组件运行时与许可服务联系，以确保许可是有效的，并且在模型开发人员用 OpenVINO™ 安全附加组件工具 (<code>ovsatool</code>) 定义的参数范围内。用户必须能够通过互联网访问独立软件开发商的许可服务。</p></li>
+</ul>
+</div><div class="collapsible-section" data-title="<strong>OpenVINO™ Security Add-on Runtime</strong>: Users install and use the OpenVINO™ Security Add-on Runtime on a virtual machine. "><p>用户在虚拟机中托管 OpenVINO™ 安全附加组件运行时组件。</p>
+<p>用户从 OpenVINO™ 安全附加组件的外部将访问控制模型添加到 OpenVINO™ 模型服务器配置文件中。OpenVINO™ 模型服务器尝试在内存中加载模型。此时，OpenVINO™ 安全附加组件运行时组件会根据独立软件开发商提供的许可服务中存储的信息验证访问控制模型的用户许可。</p>
+<p>成功验证许可后，OpenVINO™ 模型服务器加载模型并为推理请求提供服务。</p>
+</div><br>
+**OpenVINO™ 安全附加组件适合模型开发和部署的情况**
+<p><img alt="安全附加组件图表" src="_images/ovsa_diagram.png" /></p>
+<p><a class="reference external" href="https://github.com/openvinotoolkit/security_addon/blob/release_2021_4/docs/fingerprint-changes.md">本文档</a>介绍了 SWTPM（访客 VM 中使用的 vTPM）和 HW TPM（主机上的 TPM）之间的关系</p>
+</section>
+<section id="id2">
+<h2>关于安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>模型开发人员、独立软件开发商和用户必须各自准备一台物理硬件设备和一个基于内核的虚拟机 (KVM)。此外，每个人都必须为其扮演的每个角色准备一台访客虚拟机 （访客 VM）。</p>
+<p>例如：</p>
+<ul class="simple">
+<li><p>如果一个人既是模型开发人员又是独立软件开发商，则该人员必须准备两台访客 VM。两台访客 VM 可以位于同一物理硬件（主机）上，并且在该主机上的同一 KVM 下。</p></li>
+<li><p>如果一个人扮演所有这三个角色，则该人员必须准备三台访客 VM。所有三个访客 VM 都可以位于同一主机上，并且在该主机上的同一 KVM 下。</p></li>
+</ul>
+<p><strong>每台机器的用途</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>机器</p></th>
+<th class="head"><p>用途</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>主机</p></td>
+<td><p>设置 KVM 和访客 VM 共享的物理硬件。</p></td>
+</tr>
+<tr class="row-odd"><td><p>基于内核的虚拟机 (KVM)</p></td>
+<td><p>OpenVINO™ 安全附加组件在此虚拟机中运行，因为它为安全敏感操作提供了一个隔离环境。</p></td>
+</tr>
+<tr class="row-even"><td><p>访客 VM</p></td>
+<td><p>模型开发人员使用访客 VM 来启用对已完成模型的访问控制。<br>独立软件开发商使用访客 VM 托管许可服务。<br>用户使用访客 VM 与许可服务联系并运行访问控制模型。</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-name-prerequisites-a">
+<h2>必备条件<a name="prerequisites"></a><a class="headerlink" href="#a-name-prerequisites-a" title="永久链接至标题">¶</a></h2>
+<p><strong>硬件</strong></p>
+<ul class="simple">
+<li><p>英特尔® 酷睿™ 或至强® 处理器<br></p></li>
+</ul>
+<p><strong>操作系统、固件和软件</strong></p>
+<ul class="simple">
+<li><p>主机上使用 Ubuntu* Linux* 18.04。<br></p></li>
+<li><p>TPM 版本 2.0 与独立可信平台模块 (dTPM) 或固件可信平台模块 (fTPM) 兼容</p></li>
+<li><p>支持安全启动。<br></p></li>
+</ul>
+<p><strong>其他</strong></p>
+<ul class="simple">
+<li><p>独立软件开发商必须有权访问执行在线证书状态协议 (OCSP) 的证书颁发机构 (CA)，从而支持椭圆曲线加密 (ECC) 证书以进行部署。</p></li>
+<li><p>本文档中的示例使用自签名证书。</p></li>
+</ul>
+</section>
+<section id="a-name-setup-host-a">
+<h2>如何准备主机<a name="setup-host"></a><a class="headerlink" href="#a-name-setup-host-a" title="永久链接至标题">¶</a></h2>
+<p>本部分适用于模型开发人员和独立软件开发商的组合角色和单独的用户角色。</p>
+<section id="a-name-setup-packages-a">
+<h3>步骤 1：在主机上设置程序包<a name="setup-packages"></a><a class="headerlink" href="#a-name-setup-packages-a" title="永久链接至标题">¶</a></h3>
+<p>在满足 <a href="#prerequisites">必备条件</a>的英特尔® 酷睿™ 或至强® 处理器设备上开始执行此步骤。</p>
+<blockquote>
+<div><p><strong>注意</strong>：作为手动执行步骤 1-11 的替代方法，您可以在 OpenVINO™ 安全附加组件存储库下的 <code class="docutils literal notranslate"><span class="pre">Scripts/reference</span> <span class="pre">directory</span></code> 中运行脚本 <code class="docutils literal notranslate"><span class="pre">install_host_deps.sh</span></code>。如果脚本发现任何问题，它会停止并显示错误消息。如果脚本由于错误而停止，请更正导致错误的问题并重新启动脚本。脚本运行几分钟，并提供进度信息。</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>可信平台模块 (TPM) 支持测试：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dmesg <span class="p">|</span> grep -i TPM
+</pre></div>
+</div>
+<p>输出表明 TPM 在内核启动日志中可用。查找是否存在以下设备以表明是否支持 TPM：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/tpm0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/tpmrm0</span></code></p></li>
+</ul>
+<p>如果您没有看到此信息，则说明您的系统不满足 使用 OpenVINO™ 安全附加组件的<a href="#prerequisites">必备条件</a>。</p>
+</li>
+<li><p>确保在 BIOS 中启用了硬件虚拟化支持：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>kvm-ok
+</pre></div>
+</div>
+<p>输出应显示：<br>
+<code class="docutils literal notranslate"><span class="pre">INFO:</span> <span class="pre">/dev/kvm</span> <span class="pre">exists</span></code> <br>
+<code class="docutils literal notranslate"><span class="pre">KVM</span> <span class="pre">acceleration</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">used</span></code></p>
+<p>如果输出不同，请修改 BIOS 设置以启用硬件虚拟化。</p>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">kvm-ok</span></code> 命令不存在，请安装该命令：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt install -y cpu-checker
+</pre></div>
+</div>
+</li>
+<li><p>安装基于内核的虚拟机 (KVM) 和 QEMU 程序包。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>	sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
+</pre></div>
+</div>
+</li>
+<li><p>检查 QEMU 版本：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>qemu-system-x86_64 --version
+</pre></div>
+</div>
+<p>如果响应消息显示 QEMU 版本低于 2.12.0，则从 <a class="reference external" href="https://www.qemu.org/download">https://www.qemu.org/download</a> 下载、编译并安装最新的 QEMU 版本。</p>
+</li>
+<li><p>构建和安装 <a class="reference external" href="https://github.com/stefanberger/libtpms/"><code class="docutils literal notranslate"><span class="pre">libtpm</span></code> 程序包</a>。</p></li>
+<li><p>构建和安装 <a class="reference external" href="https://github.com/stefanberger/swtpm/"><code class="docutils literal notranslate"><span class="pre">swtpm</span></code> 程序包</a>。</p></li>
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">swtpm</span></code> 程序包添加到 <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> 环境变量中。</p></li>
+<li><p>安装软件工具 <a class="reference external" href="https://github.com/tpm2-software/tpm2-tss/releases/download/2.4.4/tpm2-tss-2.4.4.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-tss</span></code></a>。<br>
+安装信息可在 https://github.com/tpm2-software/tpm2-tss/blob/master/INSTALL.md 中找到</p></li>
+<li><p>安装软件工具 <a class="reference external" href="https://github.com/tpm2-software/tpm2-abrmd/releases/download/2.3.3/tpm2-abrmd-2.3.3.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-abmrd</span></code></a>。<br>
+安装信息可在 https://github.com/tpm2-software/tpm2-abrmd/blob/master/INSTALL.md 中找到</p></li>
+<li><p>安装 <a class="reference external" href="https://github.com/tpm2-software/tpm2-tools/releases/download/4.3.0/tpm2-tools-4.3.0.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-tools</span></code></a>。<br>
+安装信息可在 https://github.com/tpm2-software/tpm2-tools/blob/master/docs/INSTALL.md 中找到</p></li>
+<li><p>安装 <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker 程序包</a>。	
+<strong>注意</strong>：无论您是否使用 <code class="docutils literal notranslate"><span class="pre">install_host_deps.sh</span></code> 脚本，都需要完成步骤 12，才能在主机上完成程序包的设置。</p></li>
+<li><p>如果您在代理后运行，请<a class="reference external" href="https://docs.docker.com/config/daemon/systemd/">为 Docker 设置代理</a>。</p></li>
+</ol>
+<p>以下组件已安装并且随时可用：</p>
+<ul class="simple">
+<li><p>基于内核的虚拟机 (KVM)</p></li>
+<li><p>QEMU</p></li>
+<li><p>SW-TPM</p></li>
+<li><p>HW-TPM 支持</p></li>
+<li><p>Docker<br></p></li>
+</ul>
+<p>您已经准备好为网络配置主机。</p>
+</section>
+<section id="a-name-setup-networking-a">
+<h3>步骤 2：在主机上设置网络<a name="setup-networking"></a><a class="headerlink" href="#a-name-setup-networking-a" title="永久链接至标题">¶</a></h3>
+<p>此步骤适用于模型开发人员和独立软件开发商的组合角色。如果模型用户 VM 在不同的物理主机上运行，则还要在该主机上重复以下步骤。</p>
+<p>在此步骤中，准备两个网桥：</p>
+<ul class="simple">
+<li><p>KVM 可以通过互联网访问的全局 IP 地址。用户设备上的 OpenVINO™ 安全附加组件运行时软件使用该地址验证他们是否具有有效许可。</p></li>
+<li><p>用于在访客 VM 和 QEMU 主机操作系统之间提供通信的仅用于主机的本地地址。</p></li>
+</ul>
+<p>本步骤中的此示例使用以下名称。您的配置可能使用不同的名称：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">50-cloud-init.yaml</span></code> 作为示例配置文件名称。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eno1</span></code> 作为示例网络接口名称。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">br0</span></code> 作为示例桥接名称。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">virbr0</span></code> 作为示例桥接名称。</p></li>
+</ul>
+<ol class="arabic">
+<li><p>打开网络配置文件以进行编辑。此文件位于 <code class="docutils literal notranslate"><span class="pre">/etc/netplan</span></code> 中，其名称类似于 <code class="docutils literal notranslate"><span class="pre">50-cloud-init.yaml</span></code></p></li>
+<li><p>在文件中查找这些行：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>network:
+  ethernets:
+     eno1:
+       dhcp4: <span class="nb">true</span>
+       dhcp-identifier: mac
+  version: <span class="m">2</span>
+</pre></div>
+</div>
+</li>
+<li><p>更改现有行，并添加 <code class="docutils literal notranslate"><span class="pre">br0</span></code> 网桥。这些更改支持外部网络访问：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>network:
+  ethernets:
+     eno1:
+       dhcp4: <span class="nb">false</span>
+  bridges:
+     br0:
+       interfaces: <span class="o">[</span>eno1<span class="o">]</span>
+       dhcp4: yes
+		  dhcp-identifier: mac
+  version: <span class="m">2</span>
+</pre></div>
+</div>
+</li>
+<li><p>保存并关闭网络配置文件。</p></li>
+<li><p>运行两个命令以激活更新的网络配置文件。如果使用 ssh，在发出这些命令时可能会断开网络连接。如果是这样，请重新连接网络。</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo netplan generate
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo netplan apply
+</pre></div>
+</div>
+<p>创建桥接，并将 IP 地址指定到新桥接。
+6.验证新桥接：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ip a <span class="p">|</span> grep br0
+</pre></div>
+</div>
+<p>输出看起来与此类似，并显示有效的 IP 地址：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="m">4</span>: br0:&lt;br&gt;&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue state UP group default qlen <span class="m">1000</span>&lt;br&gt;inet <span class="m">123</span>.123.123.123/&lt;mask&gt; brd <span class="m">321</span>.321.321.321 scope global dynamic br0
+</pre></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>创建名为 <code class="docutils literal notranslate"><span class="pre">br0-qemu-ifup</span></code> 的脚本以启动 <code class="docutils literal notranslate"><span class="pre">br0</span></code> 接口。添加以下脚本内容：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="nv">nic</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/default/qemu-kvm <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	. /etc/default/qemu-kvm
+<span class="k">fi</span>
+<span class="nv">switch</span><span class="o">=</span>br0
+ifconfig <span class="nv">$nic</span> <span class="m">0</span>.0.0.0 up
+brctl addif <span class="si">${</span><span class="nv">switch</span><span class="si">}</span> <span class="nv">$nic</span>
+</pre></div>
+</div>
+</li>
+<li><p>创建名为 <code class="docutils literal notranslate"><span class="pre">br0-qemu-ifdown</span></code> 的脚本，以关闭 <code class="docutils literal notranslate"><span class="pre">br0</span></code> 接口。添加以下脚本内容：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="nv">nic</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/default/qemu-kvm <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	. /etc/default/qemu-kvm
+<span class="k">fi</span>
+<span class="nv">switch</span><span class="o">=</span>br0
+brctl delif <span class="nv">$switch</span> <span class="nv">$nic</span>
+ifconfig <span class="nv">$nic</span> <span class="m">0</span>.0.0.0 down
+</pre></div>
+</div>
+</li>
+<li><p>创建名为 <code class="docutils literal notranslate"><span class="pre">virbr0-qemu-ifup</span></code> 的脚本以启动 <code class="docutils literal notranslate"><span class="pre">virbr0</span></code> 接口。添加以下脚本内容：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="nv">nic</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/default/qemu-kvm <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	. /etc/default/qemu-kvm
+<span class="k">fi</span>
+<span class="nv">switch</span><span class="o">=</span>virbr0
+ifconfig <span class="nv">$nic</span> <span class="m">0</span>.0.0.0 up
+brctl addif <span class="si">${</span><span class="nv">switch</span><span class="si">}</span> <span class="nv">$nic</span>
+</pre></div>
+</div>
+</li>
+<li><p>创建名为 <code class="docutils literal notranslate"><span class="pre">virbr0-qemu-ifdown</span></code> 的脚本，以关闭 <code class="docutils literal notranslate"><span class="pre">virbr0</span></code> 接口。添加以下脚本内容：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="nv">nic</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/default/qemu-kvm <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+. /etc/default/qemu-kvm
+<span class="k">fi</span>
+<span class="nv">switch</span><span class="o">=</span>virbr0
+brctl delif <span class="nv">$switch</span> <span class="nv">$nic</span>
+ifconfig <span class="nv">$nic</span> <span class="m">0</span>.0.0.0 down
+</pre></div>
+</div>
+<p>有关 QEMU 网络配置的更多信息，请参见 QEMU 文档。</p>
+<p>在主机上设置网络。继续执行步骤 3，为模型开发人员和独立软件开发商的组合角色准备一个访客 VM。</p>
+</section>
+<section id="id3">
+<h3>步骤 3：克隆 OpenVINO™ 安全附加组件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>下载 <a class="reference external" href="https://github.com/openvinotoolkit/security_addon">OpenVINO™ 安全附加组件</a>。</p>
+</section>
+<section id="vm-a-name-dev-isv-vm-a">
+<h3>步骤 4：为模型开发人员和独立软件开发商的组合角色设置一个访客 VM<a name="dev-isv-vm"></a><a class="headerlink" href="#vm-a-name-dev-isv-vm-a" title="永久链接至标题">¶</a></h3>
+<p>您必须为您扮演的每个单独角色准备一个名为访客 VM 的虚拟机。因为在本版本中，模型开发人员和独立软件开发商角色组合在一起，这些指令可以引导您设置名为 <code class="docutils literal notranslate"><span class="pre">ovsa_isv</span></code> 的访客 VM。</p>
+<p>在主机上开始这些步骤。</p>
+<p>或者，您可以使用 <code class="docutils literal notranslate"><span class="pre">virsh</span></code> 和虚拟机管理器创建和启动访客 VM。如果您想执行此操作，请参见 <code class="docutils literal notranslate"><span class="pre">libvirtd</span></code> 文档以获取说明。</p>
+<ol class="arabic">
+<li><p>下载 ** 服务器，为支持 Ubuntu 18.04 的 64 位 (AMD64) 电脑**<a class="reference external" href="https://releases.ubuntu.com/18.04/"></a>安装 ISO 映像</p></li>
+<li><p>创建一个空的虚拟磁盘映像，作为模型开发人员和独立软件开发商组合角色的访客 VM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-img create -f qcow2 &lt;path&gt;/ovsa_isv_dev_vm_disk.qcow2 20G
+</pre></div>
+</div>
+</li>
+<li><p>在访客 VM 上安装 Ubuntu 18.04。将访客 VM 命名为 <code class="docutils literal notranslate"><span class="pre">ovsa_isv</span></code>：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-system-x86_64 -m <span class="m">8192</span> -enable-kvm <span class="se">\</span>
+-cpu host <span class="se">\</span>
+-drive <span class="k">if</span><span class="o">=</span>virtio,file<span class="o">=</span>&lt;path-to-disk-image&gt;/ovsa_isv_dev_vm_disk.qcow2,cache<span class="o">=</span>none <span class="se">\</span>
+-cdrom &lt;path-to-iso-image&gt;/ubuntu-18.04.5-live-server-amd64.iso <span class="se">\</span>
+-device e1000,netdev<span class="o">=</span>hostnet1,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:66:5f <span class="se">\</span>
+-netdev tap,id<span class="o">=</span>hostnet1,script<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifup,downscript<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifdown <span class="se">\</span>
+-vnc :1
+</pre></div>
+</div>
+</li>
+<li><p>通过 <code class="docutils literal notranslate"><span class="pre">&lt;host-ip-address&gt;:1</span></code> 连接 VNC 客户端</p></li>
+<li><p>按照屏幕上的提示完成访客 VM 的安装。将 VM 命名为 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev</span></code></p></li>
+<li><p>关闭访客 VM。</p></li>
+<li><p>删除 cdrom 映像的选项后，重新启动访客 VM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-system-x86_64 -m <span class="m">8192</span> -enable-kvm <span class="se">\</span>
+-cpu host <span class="se">\</span>
+-drive <span class="k">if</span><span class="o">=</span>virtio,file<span class="o">=</span>&lt;path-to-disk-image&gt;/ovsa_isv_dev_vm_disk.qcow2,cache<span class="o">=</span>none <span class="se">\</span>
+-device e1000,netdev<span class="o">=</span>hostnet1,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:66:5f <span class="se">\</span>
+-netdev tap,id<span class="o">=</span>hostnet1,script<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifup,downscript<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifdown <span class="se">\</span>
+-vnc :1
+</pre></div>
+</div>
+</li>
+<li><p>选择其中一个选项以安装其他所需的软件：</p>
+<ul class="simple">
+<li><p><strong>选项 1</strong>：使用脚本安装其他软件</p>
+<ol class="arabic simple">
+<li><p>将脚本 <code class="docutils literal notranslate"><span class="pre">install_guest_deps.sh</span></code> 从 OVSA 存储库的 <code class="docutils literal notranslate"><span class="pre">Scripts/reference</span> <span class="pre">directory</span></code> 复制到访客 VM</p></li>
+<li><p>运行脚本。</p></li>
+<li><p>关闭访客 VM。<br></p></li>
+</ol>
+</li>
+<li><p><strong>选项 2</strong>：手动安装其他软件</p>
+<ol class="arabic simple">
+<li><p>安装软件工具 <a class="reference external" href="https://github.com/tpm2-software/tpm2-tss/releases/download/2.4.4/tpm2-tss-2.4.4.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-tss</span></code></a>。
+安装信息可在 https://github.com/tpm2-software/tpm2-tss/blob/master/INSTALL.md 中找到</p></li>
+<li><p>安装软件工具 <a class="reference external" href="https://github.com/tpm2-software/tpm2-abrmd/releases/download/2.3.3/tpm2-abrmd-2.3.3.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-abmrd</span></code></a>。
+安装信息可在 https://github.com/tpm2-software/tpm2-abrmd/blob/master/INSTALL.md 中找到</p></li>
+<li><p>安装 <a class="reference external" href="https://github.com/tpm2-software/tpm2-tools/releases/download/4.3.0/tpm2-tools-4.3.0.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-tools</span></code></a>。
+安装信息可在 https://github.com/tpm2-software/tpm2-tools/blob/master/docs/INSTALL.md 中找到</p></li>
+<li><p>安装 <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker 程序包</a></p></li>
+<li><p>关闭访客 VM。<br></p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>在主机上创建一个目录，以支持虚拟 TPM 设备并提供其证书。仅 <code class="docutils literal notranslate"><span class="pre">root</span></code> 应具有此目录的读/写权限：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo mkdir -p /var/OVSA/
+sudo mkdir /var/OVSA/vtpm
+sudo mkdir /var/OVSA/vtpm/vtpm_isv_dev
+
+<span class="nb">export</span> <span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span>~/.config
+/usr/share/swtpm/swtpm-create-user-config-files
+swtpm_setup --tpmstate /var/OVSA/vtpm/vtpm_isv_dev --create-ek-cert --create-platform-cert --overwrite --tpm2 --pcr-banks -
+</pre></div>
+</div>
+<p><strong>注意</strong>：对于步骤 10 和 11，您可以复制和编辑 OpenVINO™ 安全附加组件存储库中的 <code class="docutils literal notranslate"><span class="pre">Scripts/reference</span></code> 目录中名为 <code class="docutils literal notranslate"><span class="pre">start_ovsa_isv_dev_vm.sh</span></code> 的脚本，而不是手动运行命令。如果使用脚本，无论您是模型开发人员还是独立软件开发商，都请选择文件名中带有 <code class="docutils literal notranslate"><span class="pre">isv</span></code> 的脚本。编辑脚本以指向正确的目录位置，并为每台访客 VM 递增 <code class="docutils literal notranslate"><span class="pre">vnc</span></code>。</p>
+</li>
+<li><p>在主机上启动 vTPM，将 HW TPM 数据写入其 NVRAM 中，然后重新启动适用于 QEMU 的 vTPM：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span> sudo swtpm socket --tpm2 --server <span class="nv">port</span><span class="o">=</span><span class="m">8280</span> <span class="se">\</span>
+                   --ctrl <span class="nv">type</span><span class="o">=</span>tcp,port<span class="o">=</span><span class="m">8281</span> <span class="se">\</span>
+                   --flags not-need-init --tpmstate <span class="nv">dir</span><span class="o">=</span>/var/OVSA/vtpm/vtpm_isv_dev <span class="p">&amp;</span>
+
+ sudo tpm2_startup --clear -T swtpm:port<span class="o">=</span><span class="m">8280</span>
+ sudo tpm2_startup -T swtpm:port<span class="o">=</span><span class="m">8280</span>
+ python3 &lt;path to Security-Addon source&gt;/Scripts/host/OVSA_write_hwquote_swtpm_nvram.py <span class="m">8280</span>
+ sudo pkill -f vtpm_isv_dev
+
+swtpm socket --tpmstate <span class="nv">dir</span><span class="o">=</span>/var/OVSA/vtpm/vtpm_isv_dev <span class="se">\</span>
+ --tpm2 <span class="se">\</span>
+ --ctrl <span class="nv">type</span><span class="o">=</span>unixio,path<span class="o">=</span>/var/OVSA/vtpm/vtpm_isv_dev/swtpm-sock <span class="se">\</span>
+ --log <span class="nv">level</span><span class="o">=</span><span class="m">20</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>启动访客 VM：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-system-x86_64 <span class="se">\</span>
+ -cpu host <span class="se">\</span>
+ -enable-kvm <span class="se">\</span>
+ -m <span class="m">8192</span> <span class="se">\</span>
+ -smp <span class="m">8</span>,sockets<span class="o">=</span><span class="m">1</span>,cores<span class="o">=</span><span class="m">8</span>,threads<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+ -device e1000,netdev<span class="o">=</span>hostnet0,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:66:6f <span class="se">\</span>
+ -netdev tap,id<span class="o">=</span>hostnet0,script<span class="o">=</span>&lt;path-to-scripts&gt;/br0-qemu-ifup,downscript<span class="o">=</span>&lt;path-to-scripts&gt;/br0-qemu-ifdown <span class="se">\</span>
+ -device e1000,netdev<span class="o">=</span>hostnet1,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:66:5f <span class="se">\</span>
+ -netdev tap,id<span class="o">=</span>hostnet1,script<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifup,downscript<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifdown <span class="se">\</span>
+ -drive <span class="k">if</span><span class="o">=</span>virtio,file<span class="o">=</span>&lt;path-to-disk-image&gt;/ovsa_isv_dev_vm_disk.qcow2,cache<span class="o">=</span>none <span class="se">\</span>
+ -chardev socket,id<span class="o">=</span>chrtpm,path<span class="o">=</span>/var/OVSA/vtpm/vtpm_isv_dev/swtpm-sock <span class="se">\</span>
+ -tpmdev emulator,id<span class="o">=</span>tpm0,chardev<span class="o">=</span>chrtpm <span class="se">\</span>
+ -device tpm-tis,tpmdev<span class="o">=</span>tpm0 <span class="se">\</span>
+ -vnc :1
+</pre></div>
+</div>
+<p>使用命令中的 QEMU 运行时选项更改分配给此访客 VM 的内存量或 CPU。</p>
+<ol class="arabic simple" start="12">
+<li><p>使用 VNC 客户端登录到地址为 <code class="docutils literal notranslate"><span class="pre">&lt;host-ip-address&gt;:1</span></code> 的访客 VM</p></li>
+</ol>
+</section>
+<section id="vm">
+<h3>步骤 5：为用户角色设置访客 VM<a class="headerlink" href="#vm" title="永久链接至标题">¶</a></h3>
+<ol class="arabic">
+<li><p>选择其中<strong>一个</strong>选项以创建适用于用户角色的访客 VM：<br>
+<strong>选项 1：复制和重命名 ovsa_isv_dev_vm_disk.qcow2 磁盘映像</strong></p>
+<ol class="arabic simple">
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev_vm_disk.qcow2</span></code> 磁盘映像复制到名为 <code class="docutils literal notranslate"><span class="pre">ovsa_runtime_vm_disk.qcow2</span></code> 的新映像。您已经创建了 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev_vm_disk.qcow2</span></code> 磁盘映像 （见<a  href="#prerequisites">步骤 3</a>）。</p></li>
+<li><p>启动新映像。</p></li>
+<li><p>将主机名从 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev</span></code> 更改为 <code class="docutils literal notranslate"><span class="pre">ovsa_runtime</span></code>。</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo hostnamectl set-hostname ovsa_runtime
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>在新映像中将 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev</span></code> 的所有实例替换为 <code class="docutils literal notranslate"><span class="pre">ovsa_runtime</span></code>。</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo nano /etc/hosts
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>更改 <code class="docutils literal notranslate"><span class="pre">/etc/machine-id</span></code>：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo rm /etc/machine-id
+systemd-machine-id-setup
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>关闭访客 VM。<br><br></p></li>
+</ol>
+<p><strong>选项 2：手动创建访客 VM</strong></p>
+<ol class="arabic simple">
+<li><p>创建一个空的虚拟磁盘映像：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-img create -f qcow2 &lt;path&gt;/ovsa_ovsa_runtime_vm_disk.qcow2 20G
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>在访客 VM 上安装 Ubuntu 18.04。将访客 VM 命名为 <code class="docutils literal notranslate"><span class="pre">ovsa_runtime</span></code>：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-system-x86_64 -m <span class="m">8192</span> -enable-kvm <span class="se">\</span>
+-cpu host <span class="se">\</span>
+-drive <span class="k">if</span><span class="o">=</span>virtio,file<span class="o">=</span>&lt;path-to-disk-image&gt;/ovsa_ovsa_runtime_vm_disk.qcow2,cache<span class="o">=</span>none <span class="se">\</span>
+-cdrom &lt;path-to-iso-image&gt;/ubuntu-18.04.5-live-server-amd64.iso <span class="se">\</span>
+-device e1000,netdev<span class="o">=</span>hostnet1,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:66:5f <span class="se">\</span>
+-netdev tap,id<span class="o">=</span>hostnet1,script<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifup,   <span class="nv">downscript</span><span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifdown <span class="se">\</span>
+-vnc :2
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>通过 <code class="docutils literal notranslate"><span class="pre">&lt;host-ip-address&gt;:2</span></code> 连接 VNC 客户端。</p></li>
+<li><p>按照屏幕上的提示完成访客 VM 的安装。将访客 VM 命名为 <code class="docutils literal notranslate"><span class="pre">ovsa_runtime</span></code>。</p></li>
+<li><p>关闭访客 VM。</p></li>
+<li><p>重新启动访客 VM：</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-system-x86_64 -m <span class="m">8192</span> -enable-kvm <span class="se">\</span>
+-cpu host <span class="se">\</span>
+-drive <span class="k">if</span><span class="o">=</span>virtio,file<span class="o">=</span>&lt;path-to-disk-image&gt;/ovsa_ovsa_runtime_vm_disk.qcow2,cache<span class="o">=</span>none <span class="se">\</span>
+-device e1000,netdev<span class="o">=</span>hostnet1,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:66:5f <span class="se">\</span>
+-netdev tap,id<span class="o">=</span>hostnet1,script<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifup,   <span class="nv">downscript</span><span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifdown <span class="se">\</span>
+-vnc :2
+</pre></div>
+</div>
+<ol class="arabic" start="7">
+<li><p>选择其中<strong>一个</strong>选项以安装其他所需的软件：</p>
+<p><strong>选项 1：使用脚本安装其他软件</strong></p>
+<ol class="arabic simple">
+<li><p>将脚本 <code class="docutils literal notranslate"><span class="pre">install_guest_deps.sh</span></code> 从 OVSA 存储库的 <code class="docutils literal notranslate"><span class="pre">Scripts/reference</span></code> 目录复制到访客 VM</p></li>
+<li><p>运行脚本。</p></li>
+<li><p>关闭访客 VM。<br><br></p></li>
+</ol>
+<p><strong>选项 2：手动安装其他软件</strong></p>
+<ol class="arabic simple">
+<li><p>安装软件工具<a class="reference external" href="https://github.com/tpm2-software/tpm2-tss/releases/download/2.4.4/tpm2-tss-2.4.4.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-tss</span></code></a><br>
+安装信息可在 https://github.com/tpm2-software/tpm2-tss/blob/master/INSTALL.md 中找到<br><br></p></li>
+<li><p>安装软件工具<a class="reference external" href="https://github.com/tpm2-software/tpm2-abrmd/releases/download/2.3.3/tpm2-abrmd-2.3.3.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-abmrd</span></code></a><br>
+安装信息可在 https://github.com/tpm2-software/tpm2-abrmd/blob/master/INSTALL.md 中找到<br><br></p></li>
+<li><p>安装 <a class="reference external" href="https://github.com/tpm2-software/tpm2-tools/releases/download/4.3.0/tpm2-tools-4.3.0.tar.gz"><code class="docutils literal notranslate"><span class="pre">tpm2-tools</span></code></a> <br>
+安装信息可在 https://github.com/tpm2-software/tpm2-tools/blob/master/docs/INSTALL.md 中找到<br><br></p></li>
+<li><p>安装 <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker 程序包</a></p></li>
+<li><p>关闭访客 VM。<br><br></p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>创建一个目录以支持虚拟 TPM 设备并提供其证书。仅 <code class="docutils literal notranslate"><span class="pre">root</span></code> 应具有此目录的读/写权限：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo mkdir /var/OVSA/vtpm/vtpm_runtime
+
+<span class="nb">export</span> <span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span>~/.config
+/usr/share/swtpm/swtpm-create-user-config-files
+swtpm_setup --tpmstate /var/OVSA/vtpm/vtpm_runtime --create-ek-cert --create-platform-cert --overwrite --tpm2 --pcr-banks -
+</pre></div>
+</div>
+<p><strong>注意</strong>：对于步骤 3 和 4，您可以复制和编辑 OpenVINO™ 安全附加组件存储库中的 <code class="docutils literal notranslate"><span class="pre">Scripts/reference</span></code> 目录中名为 <code class="docutils literal notranslate"><span class="pre">start_ovsa_runtime_vm.sh</span></code> 的脚本，而不是手动运行命令。编辑脚本以指向正确的目录位置，并为每台访客 VM 递增 <code class="docutils literal notranslate"><span class="pre">vnc</span></code>。这意味着，如果您在同一主机上创建第三方访客 VM，则需要将 <code class="docutils literal notranslate"><span class="pre">-vnc</span> <span class="pre">:2</span></code> 更改为 <code class="docutils literal notranslate"><span class="pre">-vnc</span> <span class="pre">:3</span></code></p>
+</li>
+<li><p>启动 vTPM，将 HW TPM 数据写入其 NVRAM 中，然后重新启动适用于 QEMU 的 vTPM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo swtpm socket --tpm2 --server <span class="nv">port</span><span class="o">=</span><span class="m">8380</span> <span class="se">\</span>
+                  --ctrl <span class="nv">type</span><span class="o">=</span>tcp,port<span class="o">=</span><span class="m">8381</span> <span class="se">\</span>
+                  --flags not-need-init --tpmstate <span class="nv">dir</span><span class="o">=</span>/var/OVSA/vtpm/vtpm_runtime <span class="p">&amp;</span>
+
+sudo tpm2_startup --clear -T swtpm:port<span class="o">=</span><span class="m">8380</span>
+sudo tpm2_startup -T swtpm:port<span class="o">=</span><span class="m">8380</span>
+python3 &lt;path to Security-Addon source&gt;/Scripts/host/OVSA_write_hwquote_swtpm_nvram.py <span class="m">8380</span>
+sudo pkill -f vtpm_runtime
+
+swtpm socket --tpmstate <span class="nv">dir</span><span class="o">=</span>/var/OVSA/vtpm/vtpm_runtime <span class="se">\</span>
+--tpm2 <span class="se">\</span>
+--ctrl <span class="nv">type</span><span class="o">=</span>unixio,path<span class="o">=</span>/var/OVSA/vtpm/vtpm_runtime/swtpm-sock <span class="se">\</span>
+--log <span class="nv">level</span><span class="o">=</span><span class="m">20</span>
+</pre></div>
+</div>
+</li>
+<li><p>在新的终端启动访客 VM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo qemu-system-x86_64 <span class="se">\</span>
+ -cpu host <span class="se">\</span>
+ -enable-kvm <span class="se">\</span>
+ -m <span class="m">8192</span> <span class="se">\</span>
+ -smp <span class="m">8</span>,sockets<span class="o">=</span><span class="m">1</span>,cores<span class="o">=</span><span class="m">8</span>,threads<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+ -device e1000,netdev<span class="o">=</span>hostnet2,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:67:6f <span class="se">\</span>
+ -netdev tap,id<span class="o">=</span>hostnet2,script<span class="o">=</span>&lt;path-to-scripts&gt;/br0-qemu-ifup,downscript<span class="o">=</span>&lt;path-to-scripts&gt;/br0-qemu-ifdown <span class="se">\</span>
+ -device e1000,netdev<span class="o">=</span>hostnet3,mac<span class="o">=</span><span class="m">52</span>:54:00:d1:67:5f <span class="se">\</span>
+ -netdev tap,id<span class="o">=</span>hostnet3,script<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifup,downscript<span class="o">=</span>&lt;path-to-scripts&gt;/virbr0-qemu-ifdown <span class="se">\</span>
+ -drive <span class="k">if</span><span class="o">=</span>virtio,file<span class="o">=</span>&lt;path-to-disk-image&gt;/ovsa_runtime_vm_disk.qcow2,cache<span class="o">=</span>none <span class="se">\</span>
+ -chardev socket,id<span class="o">=</span>chrtpm,path<span class="o">=</span>/var/OVSA/vtpm/vtpm_runtime/swtpm-sock <span class="se">\</span>
+ -tpmdev emulator,id<span class="o">=</span>tpm0,chardev<span class="o">=</span>chrtpm <span class="se">\</span>
+ -device tpm-tis,tpmdev<span class="o">=</span>tpm0 <span class="se">\</span>
+ -vnc :2
+</pre></div>
+</div>
+<p>使用命令中的 QEMU 运行时选项更改分配给此访客 VM 的内存量或 CPU。</p>
+</li>
+<li><p>使用 VNC 客户端登录到地址为 <code class="docutils literal notranslate"><span class="pre">&lt;host-ip-address&gt;:&lt;x&gt;</span></code> 的访客 VM。其中 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> 对应于 <code class="docutils literal notranslate"><span class="pre">start_ovsa_isv_vm.sh</span></code> 中或步骤 8 中的 vnc 编号。</p></li>
+</ol>
+</section>
+</section>
+<section id="openvino-a-name-install-ovsa-a">
+<h2>如何构建和安装 OpenVINO™ 安全附加组件软件<a name="install-ovsa"></a><a class="headerlink" href="#openvino-a-name-install-ovsa-a" title="永久链接至标题">¶</a></h2>
+<p>按照以下步骤在主机和不同的 VM 上构建和安装 OpenVINO™ 安全附加组件。</p>
+<section id="id4">
+<h3>步骤 1：构建 OpenVINO™ 模型服务器映像<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>根据 OpenVINO™ 模型服务器 docker 容器构建 OpenVINO™ 安全附加组件。首先在主机上下载并构建 OpenVINO™ 模型服务器。</p>
+<ol class="arabic">
+<li><p>下载 <a class="reference external" href="https://github.com/openvinotoolkit/model_server">OpenVINO™ 模型服务器软件</a></p></li>
+<li><p>构建 <a class="reference external" href="https://github.com/openvinotoolkit/model_server/blob/main/docs/docker_container.md">OpenVINO™ 模型服务器 Docker 映像</a></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/openvinotoolkit/model_server.git
+<span class="nb">cd</span> model_server
+make docker_build
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id5">
+<h3>步骤 2：构建全部角色所需的软件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>本步骤适用于模型开发人员和独立软件开发商的组合角色以及用户</p>
+<ol class="arabic">
+<li><p>转到之前克隆的顶级 OpenVINO™ 安全附加组件源代码目录。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> security_addon
+</pre></div>
+</div>
+</li>
+<li><p>构建 OpenVINO™ 安全附加组件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make clean all
+sudo -s make package
+</pre></div>
+</div>
+<p>以下程序包是在 <code class="docutils literal notranslate"><span class="pre">release_files</span></code> 目录下创建的：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ovsa-kvm-host.tar.gz</span></code>：主机文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ovsa-developer.tar.gz</span></code>：面向模型开发人员和独立软件开发商</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ovsa-model-hosting.tar.gz</span></code>：面向用户</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h3>步骤 3：安装主机软件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>本步骤适用于模型开发人员和独立软件开发商的组合角色以及用户。</p>
+<ol class="arabic">
+<li><p>转到 <code class="docutils literal notranslate"><span class="pre">release_files</span></code> 目录：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> release_files
+</pre></div>
+</div>
+</li>
+<li><p>设置路径：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">OVSA_RELEASE_PATH</span><span class="o">=</span><span class="nv">$PWD</span>
+</pre></div>
+</div>
+</li>
+<li><p>在主机上安装 OpenVINO™ 安全附加组件软件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RELEASE_PATH</span>
+tar xvfz ovsa-kvm-host.tar.gz
+<span class="nb">cd</span> ovsa-kvm-host
+./install.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p>如果您使用多个主机，请在每个主机上重复步骤 3。</p>
+</section>
+<section id="openvino-isv">
+<h3>步骤 4：安装 OpenVINO™ 安全附加组件模型开发人员/ISV 组件<a class="headerlink" href="#openvino-isv" title="永久链接至标题">¶</a></h3>
+<p>本步骤适用于模型开发人员和独立软件开发商的组合角色。对访客 VM 的参考指向 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev</span></code>。</p>
+<ol class="arabic">
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> 身份登录到访客 VM。</p></li>
+<li><p>在主目录中创建 OpenVINO™ 安全附加组件目录</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/OVSA
+</pre></div>
+</div>
+</li>
+<li><p>转到访客 VM 之外的主机。</p></li>
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">ovsa-developer.tar.gz</span></code> 从 <code class="docutils literal notranslate"><span class="pre">release_files</span></code>复 制到访客 VM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RELEASE_PATH</span>
+scp ovsa-developer.tar.gz username@&lt;isv-developer-vm-ip-address&gt;:/&lt;username-home-directory&gt;/OVSA
+</pre></div>
+</div>
+</li>
+<li><p>转到访客 VM。</p></li>
+<li><p>创建 <code class="docutils literal notranslate"><span class="pre">ovsa</span></code> 用户
+``sh
+sudo useradd -m ovsa
+sudo passwd ovsa</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+<li><p>将软件安装到访客 VM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/OVSA
+tar xvfz ovsa-developer.tar.gz
+<span class="nb">cd</span> ovsa-developer
+sudo ./install.sh
+</pre></div>
+</div>
+</li>
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">ovsa</span></code> 用户身份在单独终端上启动许可服务器。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /opt/ovsa/scripts/setupvars.sh
+<span class="nb">cd</span> /opt/ovsa/bin
+./license_server
+</pre></div>
+</div>
+<p><strong>注意</strong>：如果您受到防火墙的保护，请检查并设置代理设置以确保许可服务器能够验证证书。</p>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h3>步骤 5：安装 OpenVINO™ 安全附加组件模型托管组件<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>此步骤适用于用户。对访客 VM 的参考指向 <code class="docutils literal notranslate"><span class="pre">ovsa_runtime</span></code>。</p>
+<p>模型托管组件基于 OpenVINO™ 模型服务器 NGINX Docker 安装 OpenVINO™ 安全附加组件运行时 Docker 容器，以托管访问控制模型。</p>
+<ol class="arabic">
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> 身份登录到访客 VM。</p></li>
+<li><p>在主目录中创建 OpenVINO™ 安全附加组件目录</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/OVSA
+</pre></div>
+</div>
+</li>
+<li><p>在主机上，将 ovsa-model-hosting.tar.gz 从 release_files 复制到访客 VM 时：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RELEASE_PATH</span>
+scp ovsa-model-hosting.tar.gz username@&lt;runtime-vm-ip-address&gt;:/&lt;username-home-directory&gt;/OVSA
+</pre></div>
+</div>
+</li>
+<li><p>转到访客 VM。</p></li>
+<li><p>创建 <code class="docutils literal notranslate"><span class="pre">ovsa</span></code> 用户</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo useradd -m ovsa
+sudo passwd ovsa
+sudo usermod -aG docker ovsa
+</pre></div>
+</div>
+</li>
+<li><p>将软件安装到访客 VM：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/OVSA
+tar xvfz ovsa-model-hosting.tar.gz
+<span class="nb">cd</span> ovsa-model-hosting
+sudo ./install.sh
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="id8">
+<h2>如何使用 OpenVINO™ 安全附加组件<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>本节需要模型开发人员/独立软件开发商和用户之间进行交互。所有角色必须完成所有适用的 <a href="#setup-host">设置步骤</a>和 <a href="#ovsa-install">安装步骤</a>之后才能开始学习本节。</p>
+<p>本文档以 [face-detection-retail-0004](&#64;ref omz_models_model_face_detection_retail_0044) 模型为例。</p>
+<p>下图描述了模型开发人员、独立软件开发商和用户之间的交互。</p>
+<p><strong>请记住</strong>：模型开发人员/独立软件开发商和用户角色与虚拟机的使用相关，一个人可以填补多个角色所需完成的任务。在本文档中，模型开发人员和独立软件开发商的任务进行组合，并使用名为 <code class="docutils literal notranslate"><span class="pre">ovsa_isv</span></code> 的访客 VM。在同一台主机上可以设置所有角色。</p>
+<p><img alt="OpenVINO™ 安全附加组件示例图表" src="_images/ovsa_example.png" /></p>
+<section id="id9">
+<h3>模型开发人员指令<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>模型开发人员创建模型，定义访问控制并创建用户许可。创建模型、启用访问控制并准备好许可后，模型开发人员先向独立软件开发商提供许可详细信息，然后才能共享给模型用户。</p>
+<p>对访客 VM 的参考指向 <code class="docutils literal notranslate"><span class="pre">ovsa_isv_dev</span></code>。以 <code class="docutils literal notranslate"><span class="pre">ovsa</span></code> 用户身份登录到访客 VM。</p>
+<section id="id10">
+<h4>步骤 1：设置工件目录<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<p>创建名为工件的目录。此目录将包含创建许可所需的工件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/OVSA/artefacts
+<span class="nb">cd</span> ~/OVSA/artefacts
+<span class="nb">export</span> <span class="nv">OVSA_DEV_ARTEFACTS</span><span class="o">=</span><span class="nv">$PWD</span>
+<span class="nb">source</span> /opt/ovsa/scripts/setupvars.sh
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h4>步骤 2：创建密钥存储，并为其添加证书<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<ol class="arabic">
+<li><p>创建文件以请求证书：
+此示例使用自签名的证书进行演示。在生产环境中，使用 CSR 文件请求 CA 签名的证书。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_DEV_ARTEFACTS</span>
+/opt/ovsa/bin/ovsatool keygen -storekey -t ECDSA -n Intel -k isv_keystore -r  isv_keystore.csr -e <span class="s2">&quot;/C=IN/CN=localhost&quot;</span>
+</pre></div>
+</div>
+<p>以下两个文件与密钥存储文件一起创建：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">isv_keystore.csr</span></code> - 证书签名请求 (CSR)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isv_keystore.csr.crt</span></code> - 自签名证书</p></li>
+</ul>
+<p>在生产环境中将 <code class="docutils literal notranslate"><span class="pre">isv_keystore.csr</span></code> 发送到 CA 以请求 CA 签名的证书。</p>
+</li>
+<li><p>将证书添加到密钥存储</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/opt/ovsa/bin/ovsatool keygen -storecert -c isv_keystore.csr.crt -k isv_keystore
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id12">
+<h4>步骤 3：创建模型<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<p>此示例使用 <code class="docutils literal notranslate"><span class="pre">curl</span></code> 从 OpenVINO™ Model Zoo 下载 <code class="docutils literal notranslate"><span class="pre">face-detection-retail-004</span></code> 模型。如果您受到防火墙的保护，请检查并设置代理设置。</p>
+<p>从 Model Zoo 下载模型：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl --create-dirs https://download.01.org/opencv/2021/openvinotoolkit/2021.1/open_model_zoo/models_bin/1/face-detection-retail-0004/FP32/face-detection-retail-0004.xml https://download.01.org/opencv/2021/openvinotoolkit/2021.1/open_model_zoo/models_bin/1/face-detection-retail-0004/FP32/face-detection-retail-0004.bin -o model/face-detection-retail-0004.xml -o model/face-detection-retail-0004.bin
+</pre></div>
+</div>
+<p>将模型下载到 <code class="docutils literal notranslate"><span class="pre">OVSA_DEV_ARTEFACTS/model</span></code> 目录</p>
+</section>
+<section id="id13">
+<h4>步骤 4：为模型定义访问控制，并为其创建原版使用许可<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<p>定义和启用模型访问控制和原版使用许可：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">uuid</span><span class="o">=</span><span class="k">$(</span>uuidgen<span class="k">)</span>
+/opt/ovsa/bin/ovsatool controlAccess -i model/face-detection-retail-0004.xml model/face-detection-retail-0004.bin -n <span class="s2">&quot;face detection&quot;</span> -d <span class="s2">&quot;face detection retail&quot;</span> -v <span class="m">0004</span> -p face_detection_model.dat -m face_detection_model.masterlic -k isv_keystore -g <span class="nv">$uuid</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">face-detection-retail-0004</span></code> 模型的中间表示文件加密为 <code class="docutils literal notranslate"><span class="pre">face_detection_model.dat</span></code>，原版使用许可生成为 <code class="docutils literal notranslate"><span class="pre">face_detection_model.masterlic</span></code>。</p>
+</section>
+<section id="tcb">
+<h4>步骤 5：创建运行时参考 TCB<a class="headerlink" href="#tcb" title="永久链接至标题">¶</a></h4>
+<p>使用运行时参考 TCB 为访问控制模型和特定运行时创建客户许可。</p>
+<p>生成运行时参考 TCB</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/opt/ovsa/bin/ovsaruntime gen-tcb-signature -n <span class="s2">&quot;Face Detect @ Runtime VM&quot;</span> -v <span class="s2">&quot;1.0&quot;</span> -f face_detect_runtime_vm.tcb -k isv_keystore
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h4>步骤 6：发布访问控制模型和运行时参考 TCB<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+<p>访问控制模型已准备好与用户共享，参考 TCB 已准备好执行许可检查。</p>
+</section>
+<section id="id15">
+<h4>步骤 7：接收用户请求<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h4>
+<ol class="arabic">
+<li><p>从需要访问访问控制模型的用户处获取工件：</p>
+<ul class="simple">
+<li><p>来自客户密钥存储的客户证书。</p></li>
+<li><p>适用于您的许可做法的其他信息，例如用户需要访问模型的时间长度</p></li>
+</ul>
+</li>
+<li><p>创建客户许可配置</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_DEV_ARTEFACTS</span>
+/opt/ovsa/bin/ovsatool licgen -t TimeLimit -l30 -n <span class="s2">&quot;Time Limit License Config&quot;</span> -v <span class="m">1</span>.0 -u <span class="s2">&quot;&lt;isv-developer-vm-ip-address&gt;:&lt;license_server-port&gt;&quot;</span> /opt/ovsa/certs/server.crt  -k isv_keystore -o 30daylicense.config
+</pre></div>
+</div>
+<p><strong>注意</strong>：参数 /opt/ovsa/certs/server.crt 包含许可服务器所用的证书。将服务器证书添加到客户许可中，并在使用期间进行验证。请参阅 <a class="reference external" href="https://github.com/openvinotoolkit/security_addon/blob/release_2021_4/docs/ovsa_license_server_cert_pinning.md">OpenVINO™ 安全附加组件许可服务器证书锁定</a></p>
+</li>
+<li><p>创建客户许可</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_DEV_ARTEFACTS</span>
+/opt/ovsa/bin/ovsatool sale -m face_detection_model.masterlic -k isv_keystore -l 30daylicense.config -t face_detect_runtime_vm.tcb -p custkeystore.csr.crt -c face_detection_model.lic
+</pre></div>
+</div>
+</li>
+<li><p>使用许可更新许可服务器数据库。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /opt/ovsa/DB
+python3 ovsa_store_customer_lic_cert_db.py ovsa.db <span class="nv">$OVSA_DEV_ARTEFACTS</span>/face_detection_model.lic <span class="nv">$OVSA_DEV_ARTEFACTS</span>/custkeystore.csr.crt
+</pre></div>
+</div>
+</li>
+<li><p>向用户提供这些文件：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">face_detection_model.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">face_detection_model.lic</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="id16">
+<h3>模型用户指令<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>对访客 VM 的参考指向 <code class="docutils literal notranslate"><span class="pre">ovsa_rumtime</span></code>。以 <code class="docutils literal notranslate"><span class="pre">ovsa</span></code> 用户身份登录到访客 VM。</p>
+<section id="id17">
+<h4>步骤 1：设置工件目录<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<ol class="arabic">
+<li><p>创建名为工件的目录。此目录将包含创建许可所需的工件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/OVSA/artefacts
+<span class="nb">cd</span> ~/OVSA/artefacts
+<span class="nb">export</span> <span class="nv">OVSA_RUNTIME_ARTEFACTS</span><span class="o">=</span><span class="nv">$PWD</span>
+<span class="nb">source</span> /opt/ovsa/scripts/setupvars.sh
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="ca">
+<h4>步骤 2：将 CA 签名的证书添加到密钥存储<a class="headerlink" href="#ca" title="永久链接至标题">¶</a></h4>
+<ol class="arabic">
+<li><p>生成客户密钥存储文件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>
+/opt/ovsa/bin/ovsatool keygen -storekey -t ECDSA -n Intel -k custkeystore -r  custkeystore.csr -e <span class="s2">&quot;/C=IN/CN=localhost&quot;</span>
+</pre></div>
+</div>
+<p>以下两个文件与密钥存储文件一起创建：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">custkeystore.csr</span></code> - 证书签名请求 (CSR)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">custkeystore.csr.crt</span></code> - 自签名证书</p></li>
+</ul>
+</li>
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">custkeystore.csr</span></code> 发送到 CA 以请求 CA 签名的证书。</p></li>
+<li><p>将证书添加到密钥存储：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/opt/ovsa/bin/ovsatool keygen -storecert -c custkeystore.csr.crt -k custkeystore
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id18">
+<h4>步骤 3：请求模型开发人员提供访问控制模型<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
+<p>此示例使用 scp 在同一主机上的 ovsa_runtime 和 ovsa_dev 访客 VM 之间共享数据。</p>
+<ol class="arabic">
+<li><p>将您对模型的需求传达给模型开发人员。开发人员将要求您提供密钥存储中的证书和其他信息。此示例使用模型所需的可用的时间长度。</p></li>
+<li><p>模型用户的证书需要提供给开发人员：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>
+scp custkeystore.csr.crt username@&lt;developer-vm-ip-address&gt;:/&lt;username-home-directory&gt;/OVSA/artefacts
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id19">
+<h4>步骤 4：接收访问控制模型并将其载入 OpenVINO™ 模型服务器中<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
+<ol class="arabic">
+<li><p>接收以下文件名的模型：</p>
+<ul class="simple">
+<li><p>face_detection_model.dat</p></li>
+<li><p>face_detection_model.lic</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>
+scp username@&lt;developer-vm-ip-address&gt;:/&lt;username-home-directory&gt;/OVSA/artefacts/face_detection_model.dat .
+scp username@&lt;developer-vm-ip-address&gt;:/&lt;username-home-directory&gt;/OVSA/artefacts/face_detection_model.lic .
+</pre></div>
+</div>
+</li>
+<li><p>准备环境：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>/..
+cp /opt/ovsa/example_runtime ovms -r
+<span class="nb">cd</span> ovms
+mkdir -vp model/fd/1
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">$OVSA_RUNTIME_ARTEFACTS/../ovms</span></code> 目录包含用于启动模型服务器的脚本和样本配置 JSON 文件。</p>
+</li>
+<li><p>复制模型开发人员提供的工件：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>/../ovms
+cp <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>/face_detection_model.dat model/fd/1/.
+cp <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>/face_detection_model.lic model/fd/1/.
+cp <span class="nv">$OVSA_RUNTIME_ARTEFACTS</span>/custkeystore model/fd/1/.
+</pre></div>
+</div>
+</li>
+<li><p>重命名并编辑 <code class="docutils literal notranslate"><span class="pre">sample.json</span></code> 以包含模型开发人员提供的访问控制模型工件的名称。该文件如下所示：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="s2">&quot;custom_loader_config_list&quot;</span>:<span class="o">[</span>
+	<span class="o">{</span>
+		<span class="s2">&quot;config&quot;</span>:<span class="o">{</span>
+				<span class="s2">&quot;loader_name&quot;</span>:<span class="s2">&quot;ovsa&quot;</span>,
+				<span class="s2">&quot;library_path&quot;</span>: <span class="s2">&quot;/ovsa-runtime/lib/libovsaruntime.so&quot;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">]</span>,
+<span class="s2">&quot;model_config_list&quot;</span>:<span class="o">[</span>
+	<span class="o">{</span>
+	<span class="s2">&quot;config&quot;</span>:<span class="o">{</span>
+		<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;controlled-access-model&quot;</span>,
+		<span class="s2">&quot;base_path&quot;</span>:<span class="s2">&quot;/sampleloader/model/fd&quot;</span>,
+		<span class="s2">&quot;custom_loader_options&quot;</span>: <span class="o">{</span><span class="s2">&quot;loader_name&quot;</span>:  <span class="s2">&quot;ovsa&quot;</span>, <span class="s2">&quot;keystore&quot;</span>:  <span class="s2">&quot;custkeystore&quot;</span>, <span class="s2">&quot;controlled_access_file&quot;</span>: <span class="s2">&quot;face_detection_model&quot;</span><span class="o">}</span>
+	<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="nginx">
+<h4>步骤 5：启动 NGINX 模型服务器<a class="headerlink" href="#nginx" title="永久链接至标题">¶</a></h4>
+<p>NGINX 模型服务器发布访问控制模型。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./start_secure_ovsa_model_server.sh
+</pre></div>
+</div>
+<p>有关 NGINX 接口的信息，请参见 https://github.com/openvinotoolkit/model_server/blob/main/extras/nginx-mtls-auth/README.md</p>
+</section>
+<section id="id20">
+<h4>步骤 6：准备运行推理<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h4>
+<ol class="arabic">
+<li><p>从另一个终端登录到访客 VM。</p></li>
+<li><p>为您的设置安装 Python 依赖项。例如：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt install pip3
+pip3 install cmake
+pip3 install scikit-build
+pip3 install opencv-python
+pip3 install <span class="nv">futures</span><span class="o">==</span><span class="m">3</span>.1.1
+pip3 install tensorflow-serving-api<span class="o">==</span><span class="m">1</span>.14.0
+</pre></div>
+</div>
+</li>
+<li><p>从 <code class="docutils literal notranslate"><span class="pre">/opt/ovsa/example_client</span></code> 中的 example_client 复制<code class="docutils literal notranslate"><span class="pre">face_detection.py</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/OVSA/ovms
+cp /opt/ovsa/example_client/* .
+</pre></div>
+</div>
+</li>
+<li><p>复制样本映像以进行推理。创建的映像目录包括用于推理的样本映像。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl --create-dirs https://raw.githubusercontent.com/openvinotoolkit/model_server/master/example_client/images/people/people1.jpeg -o images/people1.jpeg
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id21">
+<h4>步骤 7：运行推理<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h4>
+<p>运行 <code class="docutils literal notranslate"><span class="pre">face_detection.py</span></code> 脚本：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 face_detection.py --grpc_port <span class="m">3335</span> --batch_size <span class="m">1</span> --width <span class="m">300</span> --height <span class="m">300</span> --input_images_dir images --output_dir results --tls --server_cert /var/OVSA/Modelserver/server.pem --client_cert /var/OVSA/Modelserver/client.pem --client_key /var/OVSA/Modelserver/client.key --model_name controlled-access-model
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id22">
+<h2>摘要<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
+<p>您已经完成这些任务：</p>
+<ul class="simple">
+<li><p>设置一台或多台电脑（主机），每台电脑一台 KVM，并在主机上设置一台或多台虚拟机（访客 VM）</p></li>
+<li><p>安装 OpenVINO™ 安全附加组件</p></li>
+<li><p>结合使用 OpenVINO™ 模型服务器与 OpenVINO™ 安全附加组件</p></li>
+<li><p>作为模型开发人员或独立软件开发商，您可以对模型启用访问控制并为其准备许可。</p></li>
+<li><p>作为模型开发人员或独立软件开发商，您准备和运行许可服务器，并使用许可服务器验证用户是否具有使用访问控制模型的有效许可。</p></li>
+<li><p>作为用户，您向模型开发人员或独立软件开发商提供用于获取访问控制模型和模型许可的信息。</p></li>
+<li><p>作为用户，您设置并启动一个主机服务器，在该主机服务器上，您可以运行许可和访问控制模型。</p></li>
+<li><p>作为用户，您加载访问控制模型，验证模型许可并使用模型运行推理。</p></li>
+</ul>
+</section>
+<section id="id23">
+<h2>参考资料<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h2>
+<p>使用这些链接，以便获取更多信息：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://software.intel.com/en-us/openvino-toolkit">OpenVINO™ 工具套件</a></p></li>
+<li><p><a class="reference external" href="https://github.com/openvinotoolkit/model_server/blob/main/docs/ovms_quickstart.md">OpenVINO™ 模型服务器快速入门指南</a></p></li>
+<li><p><a class="reference external" href="https://github.com/openvinotoolkit/model_server/blob/main/docs/models_repository.md">模型存储库</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="ov_transformations.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="performance_benchmarks.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Various.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

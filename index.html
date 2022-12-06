@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>OpenVino zh_CN &#8212; OpenVINO  文档</title>
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/tabs.css" type="text/css" />
+    <script src="_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/target-highlight.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="CPU 设备" href="CPU.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="#">
+<p class="title">OpenVINO</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="CPU.html">
+  CPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Convert_Model_From_Paddle.html">
+  转换 PadlePaddle 模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Deep_Learning_Model_Optimizer_DevGuide.html">
+  模型优化器用法
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Device_Plugins.html">
+  推理设备支持
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="GPU.html">
+  GPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Getting_performance_numbers.html">
+  获得性能数据
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Intro.html">
+  OpenVINO™ API 2.0 迁移指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="OTE_landing_page.html">
+  OpenVINO™ 训练扩展
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="README.html">
+  模型下载程序和其他自动化工具
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="common_inference_pipeline.html">
+  推理管道
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="configure_devices.html">
+  配置设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_guide_introduction.html">
+  OpenVINO™ 部署简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_intro.html">
+  使用 OpenVINO™ 部署应用
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_migration.html">
+  安装和部署
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dl_workbench_overview.html">
+  OpenVINO™ 深度学习工作台概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_deployment_optimization_guide.html">
+  运行时推理优化
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_optimization_guide.html">
+  性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dlstreamer.html">
+  英特尔® Deep Learning Streamer（英特尔® DL Streamer）
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="gapi_intro.html">
+  OpenCV Graph API (G-API) 简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="graph_construction.html">
+  在 OpenVINO™ 运行时创建模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="home.html">
+  OpenVINO™ 模型服务器
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="introduction.html">
+  OpenVINO™ 安全性简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_introduction.html">
+  模型处理简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_optimization_guide.html">
+  模型优化指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem.html">
+  OpenVINO™ 生态系统概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem_ovtf.html">
+  OpenVINO™ 与 TensorFlow 集成
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_intro.html">
+  利用 OpenVINO™ 运行时展开推理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_dynamic_shapes.html">
+  动态形状
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_transformations.html">
+  转换 API 概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ovsa_get_started.html">
+  OpenVINO™ 安全附加组件
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_benchmarks.html">
+  性能基准测试
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_hints.html">
+  高级别性能提示
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="preprocessing.html">
+  预处理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="protecting_model_guide.html">
+  结合使用加密模型和 OpenVINO
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="supported_model_formats.html">
+  支持的模型格式
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="workbench.html">
+  深度学习工作台安全性
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+                <div>
+                  
+  <section id="openvino-zh-cn">
+<h1>OpenVino zh_CN<a class="headerlink" href="#openvino-zh-cn" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CPU.html">CPU 设备</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id1">设备名称</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id2">支持的推理数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id3">量化数据类型细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id4">浮点数据类型细节</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id5">支持的功能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id6">多设备执行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id7">多流执行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id8">动态输入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id9">预处理加速</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id10">模型缓存</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id11">扩展性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id12">有状态模型</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id13">支持的属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id14">读写属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id15">只读属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id16">外部依赖包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id17">优化指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CPU.html#id18">反向规格化数字优化</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CPU.html#id19">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Convert_Model_From_Paddle.html">转换 PadlePaddle 模型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Convert_Model_From_Paddle.html#paddlepaddle">支持的 PaddlePaddle 层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Convert_Model_From_Paddle.html#id1">正式支持的 PaddlePaddle 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Convert_Model_From_Paddle.html#faq">常见问题解答 (FAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Convert_Model_From_Paddle.html#id2">另请参阅</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Deep_Learning_Model_Optimizer_DevGuide.html">模型优化器用法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Deep_Learning_Model_Optimizer_DevGuide.html#id2">如何运行模型优化器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Deep_Learning_Model_Optimizer_DevGuide.html#cli">CLI 命令的示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Device_Plugins.html">推理设备支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Device_Plugins.html#id2">功能支持表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Device_Plugins.html#id3">枚举可用设备</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GPU.html">GPU 设备</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#id1">设备命名约定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#id2">支持的推理数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#id3">支持的功能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id4">多设备执行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id5">自动批处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id6">多流执行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id7">动态输入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id8">预处理加速</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id9">模型缓存</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id10">扩展性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#gpu-remotetensor-api">GPU 上下文和内存通过 RemoteTensor API 共享</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#id11">支持的属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id12">读写属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GPU.html#id13">只读属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#id14">限制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#gpu-a-name-gpu-checklist-a">GPU 性能清单：摘要<a name="gpu-checklist"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="GPU.html#id15">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_performance_numbers.html">获得性能数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Getting_performance_numbers.html#id2">提示 1：请选择适当的操作集进行测量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_performance_numbers.html#id3">提示 2：尝试获取可靠的数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_performance_numbers.html#benchmark-app">使用 benchmark_app 测量参考性能数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_performance_numbers.html#id4">注意将性能与原生/框架代码进行比较</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_performance_numbers.html#a-name-performance-counters-a">来自内部推理性能计数器和执行图的数据<a name="performance-counters"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_performance_numbers.html#itt">使用 ITT 获得性能洞察</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">OpenVINO™ API 2.0 迁移指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#api-2-0">API 2.0 简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#openvino-ir-v11">全新 OpenVINO™ IR v11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#openvino-ir-v10">向后兼容 OpenVINO™ IR v10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#a-name-differences-api20-ie-a-api-2-0-api"><a name="differences-api20-ie"></a>API 2.0 与推理引擎 API 的行为差异</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#id1">更多信息</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OTE_landing_page.html">OpenVINO™ 训练扩展</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#id1">详细工作流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#ote">OTE 组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#id2">入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#id3">必备条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#id4">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#id5">教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OTE_landing_page.html#id6">参与</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">模型下载程序和其他自动化工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id2">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id3">模型下载程序用法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#id4">模型下载程序起始参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#json">JSON 进程报告格式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id5">模型转换器用法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#id6">模型转换器起始参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id7">模型量化器使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id8">模型信息转储器用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id9">共享选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id10">数据集的数据下载程序用法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_inference_pipeline.html">推理管道</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-create-core-a-1"><a name="create-core"></a>1. 创建核心对象</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common_inference_pipeline.html#a-name-load-extensions-a-1-1"><a name="load-extensions"></a>1.1 （可选）加载扩展</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-read-model-a-2"><a name="read-model"></a>2.从驱动器中读取模型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common_inference_pipeline.html#a-name-perform-preprocessing-a-2-1"><a name="perform-preprocessing"></a>2.1 （可选）执行模型预处理</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-load-model-to-device-a-3"><a name="load-model-to-device"></a>3.将模型加载到设备</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-create-inference-request-a-4"><a name="create-inference-request"></a>4.创建推理请求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-fill-tensor-a-5"><a name="fill-tensor"></a>5.用数据填充输入张量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-start-inference-a-6"><a name="start-inference"></a>6.开始推理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_inference_pipeline.html#a-name-process-results-a-7"><a name="process-results"></a>7.处理推理结果</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configure_devices.html">配置设备</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configure_devices.html#id2">设置配置值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure_devices.html#id3">获取信息</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_guide_introduction.html">OpenVINO™ 部署简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_intro.html">使用 OpenVINO™ 部署应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_intro.html#id1">主要分发类型的粒度</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_migration.html">安装和部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_migration.html#openvino">安装包仅包含 OpenVINO™ 运行时</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_migration.html#pypi-openvino">通过 PyPI 安装 OpenVINO™ 开发工具</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deployment_migration.html#id2">对于 2022.1 之前的版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployment_migration.html#id3">对于 2022.1 及更高版本</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_migration.html#c-c">构建 C/C++ 应用的接口发生更改</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deployment_migration.html#cmake">CMake 接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployment_migration.html#id4">原生接口</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_migration.html#id5">库结构更清晰，部署更便捷</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dl_workbench_overview.html">OpenVINO™ 深度学习工作台概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dl_workbench_overview.html#id1">视频</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl_workbench_overview.html#id2">用户目标</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl_workbench_overview.html#id3">通用工作流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl_workbench_overview.html#id4">OpenVINO™ 工具套件组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl_workbench_overview.html#id5">联系我们</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dldt_deployment_optimization_guide.html">运行时推理优化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dldt_deployment_optimization_guide.html#id2">编写性能可移植推理应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dldt_deployment_optimization_guide.html#id3">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dldt_optimization_guide.html">性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dldt_optimization_guide.html#id2">端到端应用性能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dldt_optimization_guide.html#id3">提高性能：模型与运行时优化对比</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dldt_optimization_guide.html#id4">性能基准测试</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dlstreamer.html">英特尔® Deep Learning Streamer（英特尔® DL Streamer）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gapi_intro.html">OpenCV Graph API (G-API) 简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gapi_intro.html#g-api">G-API 概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gapi_intro.html#id1">编程模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gapi_intro.html#id2">开发工作流程</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="graph_construction.html">在 OpenVINO™ 运行时创建模型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="graph_construction.html#ngraph-api">nGraph API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_construction.html#api-2-0">API 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_construction.html#id1">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="home.html">OpenVINO™ 模型服务器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="home.html#id1">运行 OpenVINO 模型服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home.html#id2">参考资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home.html#id3">联系</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">OpenVINO™ 安全性简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_introduction.html">模型处理简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_optimization_guide.html">模型优化指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_optimization_guide.html#id2">详细工作流程：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_optimization_guide.html#id3">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openvino_ecosystem.html">OpenVINO™ 生态系统概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#openvino-ovms">OpenVINO™ 模型服务器 (OVMS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#nncf">神经网络压缩框架 (NNCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#id1">OpenVINO™ 安全插件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#openvino-tensorflow-ovtf">OpenVINO™ 与 TensorFlow 集成 (OVTF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#dl-streamer">DL Streamer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#id2">深度学习工作台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#openvino-ote">OpenVINO™ 训练扩展 (OTE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#cvat">计算机视觉注释工具 (CVAT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem.html#datumaro">数据集管理框架 (Datumaro)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openvino_ecosystem_ovtf.html">OpenVINO™ 与 TensorFlow 集成</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem_ovtf.html#id1">许可</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem_ovtf.html#id2">支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openvino_ecosystem_ovtf.html#id3">如何参与</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openvino_intro.html">利用 OpenVINO™ 运行时展开推理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="openvino_intro.html#id1">视频</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ov_dynamic_shapes.html">动态形状</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ov_dynamic_shapes.html#id2">应用动态形状</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ov_dynamic_shapes.html#id3">本机处理动态形状</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ov_dynamic_shapes.html#id4">配置模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_dynamic_shapes.html#id5">未定义维度“开箱即用”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_dynamic_shapes.html#id6">维度界限范围</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_dynamic_shapes.html#id7">设置输入张量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_dynamic_shapes.html#id8">输出结果中的动态输入</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ov_transformations.html">转换 API 概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#id1">使用模型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ov_transformations.html#id2">使用节点输入和输出端口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_transformations.html#id3">节点替换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_transformations.html#id4">节点消除</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#a-name-transformations-types-a">转换类型<a name="transformations_types"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#id5">转换条件编译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#a-name-transformation-writing-essentials-a">转换编写基本知识<a name="transformation_writing_essentials"></a></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ov_transformations.html#id6">1.友好名称</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_transformations.html#id7">2.运行时信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ov_transformations.html#id8">3.常量折叠</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#a-name-common-mistakes-a">转换中的常见错误<a name="common_mistakes"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#a-name-using-pass-manager-a">使用传递管理器<a name="using_pass_manager"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#a-name-how-to-debug-transformations-a">如何调试转换<a name="how_to_debug_transformations"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ov_transformations.html#id9">另请参阅</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ovsa_get_started.html">OpenVINO™ 安全附加组件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#id1">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#id2">关于安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#a-name-prerequisites-a">必备条件<a name="prerequisites"></a></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#a-name-setup-host-a">如何准备主机<a name="setup-host"></a></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#a-name-setup-packages-a">步骤 1：在主机上设置程序包<a name="setup-packages"></a></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#a-name-setup-networking-a">步骤 2：在主机上设置网络<a name="setup-networking"></a></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id3">步骤 3：克隆 OpenVINO™ 安全附加组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#vm-a-name-dev-isv-vm-a">步骤 4：为模型开发人员和独立软件开发商的组合角色设置一个访客 VM<a name="dev-isv-vm"></a></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#vm">步骤 5：为用户角色设置访客 VM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#openvino-a-name-install-ovsa-a">如何构建和安装 OpenVINO™ 安全附加组件软件<a name="install-ovsa"></a></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id4">步骤 1：构建 OpenVINO™ 模型服务器映像</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id5">步骤 2：构建全部角色所需的软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id6">步骤 3：安装主机软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#openvino-isv">步骤 4：安装 OpenVINO™ 安全附加组件模型开发人员/ISV 组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id7">步骤 5：安装 OpenVINO™ 安全附加组件模型托管组件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#id8">如何使用 OpenVINO™ 安全附加组件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id9">模型开发人员指令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id10">步骤 1：设置工件目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id11">步骤 2：创建密钥存储，并为其添加证书</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id12">步骤 3：创建模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id13">步骤 4：为模型定义访问控制，并为其创建原版使用许可</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#tcb">步骤 5：创建运行时参考 TCB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id14">步骤 6：发布访问控制模型和运行时参考 TCB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id15">步骤 7：接收用户请求</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ovsa_get_started.html#id16">模型用户指令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id17">步骤 1：设置工件目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#ca">步骤 2：将 CA 签名的证书添加到密钥存储</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id18">步骤 3：请求模型开发人员提供访问控制模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id19">步骤 4：接收访问控制模型并将其载入 OpenVINO™ 模型服务器中</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#nginx">步骤 5：启动 NGINX 模型服务器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id20">步骤 6：准备运行推理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovsa_get_started.html#id21">步骤 7：运行推理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#id22">摘要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ovsa_get_started.html#id23">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performance_benchmarks.html">性能基准测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_hints.html">高级别性能提示</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#id2">性能提示：延迟和吞吐量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#id3">性能提示：工作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#api">使用性能提示：基本 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#id4">来自应用的其他（可选）提示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#id5">最佳推理请求数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#id6">倾向异步 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#id7">结合提示和各个低级别设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_hints.html#benchmark-app">利用 Benchmark_App 测试提示性能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="performance_hints.html#id8">另请参阅</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessing.html">预处理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing.html#api-2-0">API 2.0 中预处理的工作机制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing.html#python">准备：在 Python 中导入预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing.html#id2">使用平均值和标度值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing.html#id3">转换精度和布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing.html#id4">使用图像缩放</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="preprocessing.html#id5">转换颜色空间</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing.html#id6">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protecting_model_guide.html">结合使用加密模型和 OpenVINO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protecting_model_guide.html#id1">安全部署模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protecting_model_guide.html#id2">加载加密模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protecting_model_guide.html#id3">其他资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="supported_model_formats.html">支持的模型格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbench.html">深度学习工作台安全性</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workbench.html#id2">运行深度学习工作台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workbench.html#id3">身份验证安全性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workbench.html#tls">使用 TLS 保护通信</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="next-link" href="CPU.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Various.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

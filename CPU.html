@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>CPU 设备 &#8212; OpenVINO  文档</title>
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/tabs.css" type="text/css" />
+    <script src="_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/target-highlight.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="转换 PadlePaddle 模型" href="Convert_Model_From_Paddle.html" />
+    <link rel="prev" title="OpenVino zh_CN" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">OpenVINO</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  CPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Convert_Model_From_Paddle.html">
+  转换 PadlePaddle 模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Deep_Learning_Model_Optimizer_DevGuide.html">
+  模型优化器用法
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Device_Plugins.html">
+  推理设备支持
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="GPU.html">
+  GPU 设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Getting_performance_numbers.html">
+  获得性能数据
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Intro.html">
+  OpenVINO™ API 2.0 迁移指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="OTE_landing_page.html">
+  OpenVINO™ 训练扩展
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="README.html">
+  模型下载程序和其他自动化工具
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="common_inference_pipeline.html">
+  推理管道
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="configure_devices.html">
+  配置设备
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_guide_introduction.html">
+  OpenVINO™ 部署简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_intro.html">
+  使用 OpenVINO™ 部署应用
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="deployment_migration.html">
+  安装和部署
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dl_workbench_overview.html">
+  OpenVINO™ 深度学习工作台概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_deployment_optimization_guide.html">
+  运行时推理优化
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dldt_optimization_guide.html">
+  性能优化简介虽然推理性能应定义为许多因素（包括精度和效率）的组合，但多数情况下会将其描述为执行速度。作为模型处理实时数据的速率，从根本上说，它基于两个相互关联的指标：延迟和吞吐量。
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="dlstreamer.html">
+  英特尔® Deep Learning Streamer（英特尔® DL Streamer）
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="gapi_intro.html">
+  OpenCV Graph API (G-API) 简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="graph_construction.html">
+  在 OpenVINO™ 运行时创建模型
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="home.html">
+  OpenVINO™ 模型服务器
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="introduction.html">
+  OpenVINO™ 安全性简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_introduction.html">
+  模型处理简介
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="model_optimization_guide.html">
+  模型优化指南
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem.html">
+  OpenVINO™ 生态系统概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_ecosystem_ovtf.html">
+  OpenVINO™ 与 TensorFlow 集成
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="openvino_intro.html">
+  利用 OpenVINO™ 运行时展开推理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_dynamic_shapes.html">
+  动态形状
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ov_transformations.html">
+  转换 API 概述
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="ovsa_get_started.html">
+  OpenVINO™ 安全附加组件
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_benchmarks.html">
+  性能基准测试
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="performance_hints.html">
+  高级别性能提示
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="preprocessing.html">
+  预处理
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="protecting_model_guide.html">
+  结合使用加密模型和 OpenVINO
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="supported_model_formats.html">
+  支持的模型格式
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="workbench.html">
+  深度学习工作台安全性
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   设备名称
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   支持的推理数据类型
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     量化数据类型细节
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     浮点数据类型细节
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   支持的功能
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     多设备执行
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     多流执行
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     动态输入
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     预处理加速
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     模型缓存
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     扩展性
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     有状态模型
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   支持的属性
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     读写属性
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     只读属性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   外部依赖包
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   优化指南
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     反向规格化数字优化
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   其他资源
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+                <div>
+                  
+  <section id="cpu">
+<h1>CPU 设备<a class="headerlink" href="#cpu" title="永久链接至标题">¶</a></h1>
+<p>CPU 插件是英特尔® 发行版 OpenVINO™ 工具套件的一部分。其开发目的是为了实现英特尔® x86-64 CPU 上神经网络的高性能推理。
+有关 CPU 插件的深入描述，请参见：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/openvinotoolkit/openvino/wiki/CPUPluginDevelopersDocs">CPU 插件开发人员文档</a>。</p></li>
+<li><p><a class="reference external" href="https://github.com/openvinotoolkit/openvino/tree/master/src/plugins/intel_cpu/">OpenVINO™ 运行时 CPU 插件源文件</a>。</p></li>
+</ul>
+<section id="id1">
+<h2>设备名称<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">CPU</span></code> 设备名称用于 CPU 插件。即使平台上可以有多个物理套接字，但 OpenVINO™ 也只列出了一个此类设备。
+在多套接字平台上，会自动处理 NUMA 节点之间的负载平衡和内存使用分配情况。<br />
+为了将 CPU 用于推理，应将设备名称传递到 <code class="docutils literal notranslate"><span class="pre">ov::Core::compile_model()</span></code> 方法：</p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}
+&#64;snippet docs/snippets/cpu/compile_model.cpp compile_model_default
+&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}
+&#64;snippet docs/snippets/cpu/compile_model.py compile_model_default
+&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+</section>
+<section id="id2">
+<h2>支持的推理数据类型<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>CPU 插件支持以下数据类型作为内部基元的推理精度：</p>
+<ul class="simple">
+<li><p>浮点数据类型：</p>
+<ul>
+<li><p>f32</p></li>
+<li><p>bf16</p></li>
+</ul>
+</li>
+<li><p>整数数据类型：</p>
+<ul>
+<li><p>i32</p></li>
+</ul>
+</li>
+<li><p>量化数据类型：</p>
+<ul>
+<li><p>u8</p></li>
+<li><p>i8</p></li>
+<li><p>u1</p></li>
+</ul>
+</li>
+</ul>
+<p><span class="xref myst">Hello 查询设备 C++ 样本</span>可以用于打印出所有检测到的设备支持的数据类型。</p>
+<section id="id3">
+<h3>量化数据类型细节<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>每个基元的所选精度取决于 IR 中的操作精度、量化基元和可用的硬件功能。
+<code class="docutils literal notranslate"><span class="pre">u1/u8/i8</span></code> 数据类型仅用于量化操作，即不会自动为非量化操作选择的数据类型。</p>
+<p>有关如何获得量化模型的更多详细信息，请参见[低精度优化指南](&#64;ref openvino_docs_model_optimization_guide)。</p>
+<blockquote>
+<div><p><strong>注意</strong>：不支持英特尔® AVX512-VNNI 的平台有一个已知的“饱和问题”。该问题可能会导致 <code class="docutils literal notranslate"><span class="pre">u8/i8</span></code> 精度计算的计算精度降低。
+请参见[饱和（溢出）问题部分]，(&#64;ref pot_saturation_issue)以获取有关如何检测此类问题和可能的解决方法的更多信息。</p>
+</div></blockquote>
+</section>
+<section id="id4">
+<h3>浮点数据类型细节<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>CPU 基元的默认浮点精度为 <code class="docutils literal notranslate"><span class="pre">f32</span></code>。如需支持 <code class="docutils literal notranslate"><span class="pre">f16</span></code> OpenVINO™ IR，插件要在内部将所有 <code class="docutils literal notranslate"><span class="pre">f16</span></code> 值转换为 <code class="docutils literal notranslate"><span class="pre">f32</span></code>，并且所有计算都使用 <code class="docutils literal notranslate"><span class="pre">f32</span></code> 的原生精度执行。
+在本地支持 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 计算的平台上（具有 <code class="docutils literal notranslate"><span class="pre">AVX512_BF16</span></code> 扩展），会自动使用 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 类型，而不会使用 <code class="docutils literal notranslate"><span class="pre">f32</span></code>，以获得更高性能。因此，运行 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 模型不需要采取特殊步骤。
+有关 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 格式的更多详细信息，请参见 <a class="reference external" href="https://software.intel.com/content/dam/develop/external/us/en/documents/bf16-hardware-numerics-definition-white-paper.pdf">BFLOAT16 – 硬件数字定义白皮书</a>。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 精度提供以下性能优势：</p>
+<ul class="simple">
+<li><p>加快两个 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 数字的乘法，因为 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 数据的尾数较短。</p></li>
+<li><p>内存消耗减少，因为 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 数据大小是 32 位浮点大小的一半。</p></li>
+</ul>
+<p>如需检查 CPU 设备是否支持 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 数据类型，请使用<span class="xref myst">查询设备属性接口</span>查询应在 CPU 功能列表中包含 <code class="docutils literal notranslate"><span class="pre">BF16</span></code> 的 <code class="docutils literal notranslate"><span class="pre">ov::device::capabilities</span></code> 属性：</p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}
+&#64;snippet docs/snippets/cpu/Bfloat16Inference0.cpp part0
+&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}
+&#64;snippet docs/snippets/cpu/Bfloat16Inference.py part0
+&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p>如果模型已转换为 <code class="docutils literal notranslate"><span class="pre">bf16</span></code>，则 <code class="docutils literal notranslate"><span class="pre">ov::hint::inference_precision</span></code> 将设置为 <code class="docutils literal notranslate"><span class="pre">ov::element::bf16</span></code> 并且可以通过 <code class="docutils literal notranslate"><span class="pre">ov::CompiledModel::get_property</span></code> 调用进行检查。以下代码显示如何获得元件类型：</p>
+<p>&#64;snippet snippets/cpu/Bfloat16Inference1.cpp part1</p>
+<p>如需在具有原生 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 支持的目标上以 <code class="docutils literal notranslate"><span class="pre">f32</span></code> 精度推理模型，而不是使用 <code class="docutils literal notranslate"><span class="pre">bf16</span></code>，请将 <code class="docutils literal notranslate"><span class="pre">ov::hint::inference_precision</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">ov::element::f32</span></code>。</p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}
+&#64;snippet docs/snippets/cpu/Bfloat16Inference2.cpp part2
+&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}
+&#64;snippet docs/snippets/cpu/Bfloat16Inference.py part2
+&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p><code class="docutils literal notranslate"><span class="pre">Bfloat16</span></code> 软件模拟模式适用于不支持本机 <code class="docutils literal notranslate"><span class="pre">avx512_bf16</span></code> 指令、采用英特尔® AVX-512 指令集的 CPU。此模式用于开发目的，无法保证良好的性能。
+如需启用模拟，必须明确将 <code class="docutils literal notranslate"><span class="pre">ov::hint::inference_precision</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">ov::element::bf16</span></code>。</p>
+<blockquote>
+<div><p><strong>注意</strong>：如果在不支持本机 bfloat16 或 bfloat16 模拟模式的 CPU 上将 ov::hint::inference_precision 设置为 ov::element::bf16，会引发异常。</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>注意</strong>：由于 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 数据类型的尾数大小减小。因此生成的 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 推理精度可能与 <code class="docutils literal notranslate"><span class="pre">f32</span></code> 推理不同，特别是对于未使用 <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> 数据类型进行训练的模型而言。如果 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 推理精度不可接受，建议切换到 <code class="docutils literal notranslate"><span class="pre">f32</span></code> 精度。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id5">
+<h2>支持的功能<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<section id="id6">
+<h3>多设备执行<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>除 CPU 以外，如果系统包含 OpenVINO™ 支持的设备（例如集成 GPU），则任何支持的模型都可以同时在所有设备上执行。
+这可以通过在同时使用 CPU 和 GPU 的情况下将 <code class="docutils literal notranslate"><span class="pre">MULTI:CPU,GPU.0</span></code> 指定为目标设备来实现。</p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}
+&#64;snippet docs/snippets/cpu/compile_model.cpp compile_model_multi
+&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}
+&#64;snippet docs/snippets/cpu/compile_model.py compile_model_multi
+&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p>有关更多详细信息，请参见<span class="xref myst">多设备执行</span>一文。</p>
+</section>
+<section id="id7">
+<h3>多流执行<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>如果可以为 CPU 插件设置具有 <code class="docutils literal notranslate"><span class="pre">n_streams</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> 或 <code class="docutils literal notranslate"><span class="pre">ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)</span></code> 属性的 <code class="docutils literal notranslate"><span class="pre">ov::num_streams(n_streams)</span></code>，则可以为模型创建多个流。如果是 CPU 插件，每个流都有自己的主机线程，这意味着可以同时处理传入的推理请求。
+就 NUMA 节点的物理内存使用情况而言，每个流都固定到其自己的物理核心组，以最大程度地减少 NUMA 节点之间数据传输的开销。</p>
+<p>有关更多详细信息，请参见[优化指南](&#64;ref openvino_docs_deployment_optimization_guide_dldt_optimization_guide)。</p>
+<blockquote>
+<div><p><strong>注意</strong>：在延迟方面，请注意，在多套接字平台上仅运行一个流可能会在 NUMA 节点之间的数据传输中引入额外开销。
+在这种情况下，最好使用 <code class="docutils literal notranslate"><span class="pre">ov::hint::PerformanceMode::LATENCY</span></code> 性能提示。有关更多详细信息，请参见[性能提示](&#64;ref openvino_docs_OV_UG_Performance_Hints)概述。</p>
+</div></blockquote>
+</section>
+<section id="id8">
+<h3>动态输入<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>在操作集覆盖范围方面，CPU 为具有动态形状的模型提供完整的功能支持。</p>
+<blockquote>
+<div><p><strong>注意</strong>：CPU 插件不支持动态更改等级的张量。如果尝试使用此种张量推理模型，则会引发异常。</p>
+</div></blockquote>
+<p>动态形状支持会给内存管理带来额外开销，并且可能会限制内部运行时优化。
+使用的自由度越多，实现最佳性能的难度就越大。
+最灵活的配置和最方便的方法是完全未定义的形状，这意味着不会应用形状维度的约束。
+但是，降低不确定性水平会使性能提升。
+您可以通过内存重用来减少内存消耗，从而实现更好的缓存本地性并提高推理性能。为此，请以定义的上界为限，明确设置动态形状。</p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}
+&#64;snippet docs/snippets/cpu/dynamic_shape.cpp defined_upper_bound
+&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}
+&#64;snippet docs/snippets/cpu/dynamic_shape.py defined_upper_bound
+&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<blockquote>
+<div><p><strong>注意</strong>：与使用静态形状推理同一模型相比，使用完全未定义的形状可能会导致内存消耗显著增加。
+如果内存消耗不可接受，但仍需要动态形状，则可以使用具有定义上限的形状重塑模型，以减少内存占用空间。</p>
+</div></blockquote>
+<p>如果提前知道模型形状，则某些运行时优化效果会更好。
+因此，如果在推理调用之间不更改输入数据形状，建议使用具有静态形状的模型或使用静态输入形状重塑现有模型，以获得最佳性能。</p>
+<p>&#64;sphinxtabset</p>
+<p>&#64;sphinxtab{C++}
+&#64;snippet docs/snippets/cpu/dynamic_shape.cpp static_shape
+&#64;endsphinxtab</p>
+<p>&#64;sphinxtab{Python}
+&#64;snippet docs/snippets/cpu/dynamic_shape.py static_shape
+&#64;endsphinxtab</p>
+<p>&#64;endsphinxtabset</p>
+<p>有关更多详细信息，请参见<a class="reference internal" href="ov_dynamic_shapes.html"><span class="doc std std-doc">动态形状指南</span></a>。</p>
+</section>
+<section id="id9">
+<h3>预处理加速<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>CPU 插件支持全套预处理操作，并能高性能实现这些操作。</p>
+<p>有关更多详细信息，请参阅<span class="xref myst">预处理 API 指南</span>。</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+支持处理张量精度转换的 CPU 插件仅限用于以下 ov::element 类型：<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<ul class="simple">
+<li><p class="card-text">bf16</p></li>
+<li><p class="card-text">f16</p></li>
+<li><p class="card-text">f32</p></li>
+<li><p class="card-text">f64</p></li>
+<li><p class="card-text">i8</p></li>
+<li><p class="card-text">i16</p></li>
+<li><p class="card-text">i32</p></li>
+<li><p class="card-text">i64</p></li>
+<li><p class="card-text">u8</p></li>
+<li><p class="card-text">u16</p></li>
+<li><p class="card-text">u32</p></li>
+<li><p class="card-text">u64</p></li>
+<li><p class="card-text">boolean</p></li>
+</ul>
+</div>
+</details></section>
+<section id="id10">
+<h3>模型缓存<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>CPU 支持导入/导出网络功能。如果通过通用 OpenVINO™ <code class="docutils literal notranslate"><span class="pre">ov::cache_dir</span></code> 属性启用模型缓存，则插件会在模型编译期间自动在指定目录中创建缓存的 blob。
+此缓存的 blob 包含网络的部分表示形式，可执行常见的运行时优化和进行低精度转换。
+下次编译模型时，缓存的表示将加载到插件中，而不是初始 OpenVINO™ IR 中。因此将跳过上述转换步骤。
+这些转换在模型编译期间会花费大量时间。因此缓存此表示可减少模型后续编译所花费的时间，从而减少首次推理延迟 (FIL)。</p>
+<p>有关更多详细信息，请参见[模型缓存](&#64;ref openvino_docs_OV_UG_Model_caching_overview)概述。</p>
+</section>
+<section id="id11">
+<h3>扩展性<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>如果 CPU 插件无法实现自己的此类操作，则支持 <code class="docutils literal notranslate"><span class="pre">ov::Op</span></code> 参考实现的回退。
+那意味着 [OpenVINO™ 扩展性机制](&#64;ref openvino_docs_Extensibility_UG_Intro)也可用于插件扩展。
+通过重写派生操作类中的 <code class="docutils literal notranslate"><span class="pre">ov::Op::evaluate</span></code> 方法，可以启用自定义操作实现的回退（请参见[自定义 OpenVINO™ 操作](&#64;ref openvino_docs_Extensibility_UG_add_openvino_ops) 了解详细信息）。</p>
+<blockquote>
+<div><p><strong>注意</strong>：目前，插件不支持具有内部动态的自定义操作（当输出张量形状只能确定作为执行操作的结果时）。</p>
+</div></blockquote>
+</section>
+<section id="id12">
+<h3>有状态模型<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>CPU 插件支持有状态模型，且没有任何限制。</p>
+<p>有关详细信息，请参见[有状态模型指南](&#64;ref openvino_docs_OV_UG_network_state_intro)。</p>
+</section>
+</section>
+<section id="id13">
+<h2>支持的属性<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<p>插件支持以下属性：</p>
+<section id="id14">
+<h3>读写属性<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>在调用 <code class="docutils literal notranslate"><span class="pre">ov::Core::compile_model()</span></code> 之前必须设置所有参数才能生效或作为附加参数传递给 <code class="docutils literal notranslate"><span class="pre">ov::Core::compile_model()</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::enable_profiling</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::hint::inference_precision</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::hint::performance_mode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::hint::num_request</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::num_streams</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::affinity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::inference_num_threads</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::cache_dir</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::intel_cpu::denormals_optimization</span></code></p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>只读属性<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::supported_properties</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::available_devices</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::range_for_async_infer_requests</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::range_for_streams</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::device::full_name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ov::device::capabilities</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="id16">
+<h2>外部依赖包<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<p>对于某些性能关键深度学习操作，CPU 插件使用 oneAPI Deep Neural Network Library (<a class="reference external" href="https://github.com/oneapi-src/oneDNN">oneDNN</a>) 中的优化实现。</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+使用 OneDNN 库中的基元实现以下操作：<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<ul class="simple">
+<li><p class="card-text">AvgPool</p></li>
+<li><p class="card-text">Concat</p></li>
+<li><p class="card-text">Convolution</p></li>
+<li><p class="card-text">ConvolutionBackpropData</p></li>
+<li><p class="card-text">GroupConvolution</p></li>
+<li><p class="card-text">GroupConvolutionBackpropData</p></li>
+<li><p class="card-text">GRUCell</p></li>
+<li><p class="card-text">GRUSequence</p></li>
+<li><p class="card-text">LRN</p></li>
+<li><p class="card-text">LSTMCell</p></li>
+<li><p class="card-text">LSTMSequence</p></li>
+<li><p class="card-text">MatMul</p></li>
+<li><p class="card-text">MaxPool</p></li>
+<li><p class="card-text">RNNCell</p></li>
+<li><p class="card-text">RNNSequence</p></li>
+<li><p class="card-text">SoftMax</p></li>
+</ul>
+</div>
+</details></section>
+<section id="id17">
+<h2>优化指南<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+<section id="id18">
+<h3>反向规格化数字优化<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<p>反向规格化数字是非常接近零的非零有限浮点数字，即 (0, 1.17549e-38) 和 (0, -1.17549e-38) 中的数字。在这种情况下，规格化数字编码格式无法对数字进行编码，并且会发生下溢。在很多硬件上，涉及这些数字的计算极其缓慢。</p>
+<p>由于反向规格化数字非常接近于零。因此将反向规格化数字直接视为零是优化反向规格化数字计算的一种直接又简单的方法。此优化并不符合 IEEE 754 标准。如果它导致不可接受的精度下降，则可以引入 <code class="docutils literal notranslate"><span class="pre">denormals_optimization</span></code> 属性来控制此行为。如果用例中存在反向规格化数字，并且未看到精度或可接受的精度下降，则将该属性设置为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 以提高性能，否则将其设置为 <code class="docutils literal notranslate"><span class="pre">False</span></code>。如果属性未显式设置优化，并且应用也不执行任何反向规格化数字优化，则默认情况下禁用优化。启用 <code class="docutils literal notranslate"><span class="pre">denormals_optimization</span></code> 属性后，OpenVINO™ 将提供交叉操作系统/编译器，并在适用时对所有平台进行安全优化。</p>
+<p>在某些情况下，使用 OpenVINO™ 的应用也可以执行这种低级别反向规格化数字优化。如果通过在调用 OpenVINO™ 的线程开头，在 MXCSR 寄存器中设置 FTZ (Flush-To-Zero) 和 DAZ (Denormals-As-Zero) 标志进行优化，则 OpenVINO™ 将在同一线程和子线程中继承此设置。因此，无需设置 <code class="docutils literal notranslate"><span class="pre">denormals_optimization</span></code> 属性。在这种情况下，您负责设置的有效性和安全性。</p>
+<blockquote>
+<div><p><strong>注意</strong>：在调用 <code class="docutils literal notranslate"><span class="pre">compile_model()</span></code> 之前，必须设置 <code class="docutils literal notranslate"><span class="pre">denormals_optimization</span></code> 属性。</p>
+</div></blockquote>
+<p>如需在应用中启用反向规格化数字优化，必须将 <code class="docutils literal notranslate"><span class="pre">denormals_optimization</span></code> 属性设置为 <code class="docutils literal notranslate"><span class="pre">True</span></code>：</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">C++</label><div class="tab-content docutils">
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Python</label><div class="tab-content docutils">
+</div>
+</div>
+</section>
+</section>
+<section id="id19">
+<h2>其他资源<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><span class="xref myst">支持的设备</span></p></li>
+<li><p>[优化指南](&#64;ref openvino_docs_optimization_guide_dldt_optimization_guide)</p></li>
+<li><p><a class="reference external" href="https://github.com/openvinotoolkit/openvino/wiki/CPUPluginDevelopersDocs">CPU 插件开发人员文档</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="index.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="Convert_Model_From_Paddle.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Various.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
